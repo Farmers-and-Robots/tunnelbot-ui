@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Slider from '@mui/material/Slider';
+import Chart from "./components/Chart";
+import Dashboard from "./components/Dashboard";
 
 const marks = [
   {
@@ -25,14 +27,7 @@ function valuetext(value) {
 }
 
 function App() {
-  return <Slider
-      aria-label="Always visible"
-      defaultValue={80}
-      getAriaValueText={valuetext}
-      step={1}
-      marks={marks}
-      valueLabelDisplay="on"
-  />
+  return <Dashboard></Dashboard>
 }
 
 export default App;
