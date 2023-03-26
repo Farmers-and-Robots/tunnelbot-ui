@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import Slider from '@mui/material/Slider';
+
+const marks = [
+  {
+    value: 0,
+    label: 'closed',
+  },
+  {
+    value: 5,
+    label: 'cracked',
+  },
+  {
+    value: 33,
+    label: 'under the bench',
+  },
+  {
+    value: 100,
+    label: 'open',
+  },
+];
+
+function valuetext(value) {
+  return `${value}°C`;
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <Slider
+      aria-label="Always visible"
+      defaultValue={80}
+      getAriaValueText={valuetext}
+      step={1}
+      marks={marks}
+      valueLabelDisplay="on"
+  />
 }
 
 export default App;
