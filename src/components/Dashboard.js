@@ -12,11 +12,11 @@ import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import VentRemote from "./VentRemote";
 import { mainListItems } from './listItems';
 
 function Copyright(props) {
@@ -115,7 +115,7 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              Tunnel Name
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -157,17 +157,34 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Tunnels */}
+              {/* Curtains */}
               <Grid item xs={12} md={8} lg={9}>
-                <Paper
+                <Box
                   sx={{
                     p: 2,
                     display: 'flex',
-                    flexDirection: 'column',
+                    flexDirection: 'row',
                     height: 240,
+                    border: 1,
+                    borderColor: 'primary.light',
                   }}
                 >
-                </Paper>
+                    <VentRemote></VentRemote>
+                </Box>
+              </Grid>
+              <Grid item xs={12} md={8} lg={9}>
+                <Box
+                    sx={{
+                      p: 2,
+                      display: 'flex',
+                      flexDirection: 'row',
+                      height: 240,
+                      border: 1,
+                      borderColor: 'primary.light',
+                    }}
+                >
+                    <VentRemote></VentRemote>
+                </Box>
               </Grid>
             </Grid>
             <Copyright sx={{ pt: 4 }} />
