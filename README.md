@@ -1,7 +1,6 @@
-# Getting Started with Create React App
+# Tunnelbot UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+This is a repository for the frontend and UI for tunnelbot, a Farmers and Robots Open Source project to support small farmers with advanced tunnel automation.
 ## Available Scripts
 
 In the project directory, you can run:
