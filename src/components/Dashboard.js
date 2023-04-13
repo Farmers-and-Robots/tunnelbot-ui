@@ -164,7 +164,7 @@ function DashboardContent() {
                     p: 2,
                     display: 'flex',
                     flexDirection: 'row',
-                    height: 376,
+                    height: 390,
                     border: 1,
                     borderColor: 'primary.light',
                   }}
@@ -178,7 +178,7 @@ function DashboardContent() {
                       p: 2,
                       display: 'flex',
                       flexDirection: 'row',
-                      height: 376,
+                      height: 382,
                       border: 1,
                       borderColor: 'primary.light',
                     }}

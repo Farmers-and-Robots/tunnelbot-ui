@@ -6,6 +6,12 @@ import {Button, Paper, Stack, Switch} from "@mui/material";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 import SettingsIcon from '@mui/icons-material/Settings';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
 
 function valuetext(value) {
     return `${value}°C`;
@@ -29,29 +35,25 @@ function VentRemoteContent() {
                       <Button variant="contained" fullWidth>
                           Update
                       </Button>
-                  </Stack>
-                  <Grid
-                      sx={{
-                      width: '100%',
-                      border: 1,
-                      borderColor: 'primary.light',
-                      px: 2,
-                      py: 1,
-                     }}
-                  >
-                      <Grid item>
-                          <Typography variant="h6">
+                          <Typography variant="h6" >
                               thermostat
                           </Typography>
-                      </Grid>
-                      <Grid item style={{ width: "10%"}}>
-                            <SettingsIcon></SettingsIcon>
-                      </Grid>
-                      <Grid item>
-                            <Switch {...label} defaultChecked />
-                      </Grid>
-                  </Grid>
-                 </Grid>
+                          <TableContainer>
+                              <Table>
+                                  <TableBody >
+                                      <TableRow>
+                                          <TableCell align="left"  sx={{ p: 0 }} >
+                                              <SettingsIcon></SettingsIcon>
+                                          </TableCell>
+                                          <TableCell align="right"  sx={{ p: 0 }} >
+                                                <Switch {...label} defaultChecked />
+                                          </TableCell>
+                                      </TableRow>
+                                  </TableBody>
+                              </Table>
+                          </TableContainer>
+                      </Stack>
+                </Grid>
               <Grid item xs={3}>
                   <Slider
                       aria-label="Temperature"
@@ -60,7 +62,7 @@ function VentRemoteContent() {
                       valueLabelDisplay="auto"
                       defaultValue={30}
                   />
-              </Grid>
+                </Grid>
           </Grid>
       </Box>
   );
