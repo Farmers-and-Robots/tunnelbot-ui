@@ -161,7 +161,8 @@ function DashboardContent() {
               <Grid item xs={12} md={8} lg={9}>
                 <Box
                   sx={{
-                    p: 2,
+                    pt: 0,
+                    px: 2,
                     display: 'flex',
                     flexDirection: 'row',
                     height: 390,
