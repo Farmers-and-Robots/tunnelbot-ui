@@ -14,6 +14,24 @@ import TableRow from '@mui/material/TableRow';
 
 
 const label = { inputProps: { 'aria-label': 'Switch demo' } };
+const marks = [
+    {
+        value: 0,
+        label: 'closed',
+    },
+    {
+        value: 5,
+        label: 'cracked',
+    },
+    {
+        value: 33,
+        label: 'under the bench',
+    },
+    {
+        value: 100,
+        label: 'open',
+    },
+];
 
 function VentRemoteContent() {
 
