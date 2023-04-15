@@ -15,7 +15,8 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Paper from '@mui/material/Paper'
 import VentRemote from "./VentRemote";
 import { mainListItems } from './listItems';
 
@@ -78,7 +79,33 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
   }),
 );
 
-const mdTheme = createTheme();
+const farTheme = createTheme({
+    palette: {
+        mode: 'light',
+        primary: {
+            main: '#2b1C1C',
+        },
+        secondary: {
+            main: '#f79422',
+        },
+        background: {
+            default: '#e2e2d1',
+            paper: '#F0F0DD',
+        },
+        success: {
+            main: '#839339',
+        },
+        warning: {
+            main: '#f79422',
+        },
+        info: {
+            main: '#355a6c',
+        },
+        error: {
+            main: '#d13345',
+        },
+    },
+});
 
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
@@ -87,7 +114,7 @@ function DashboardContent() {
   };
 
   return (
-    <ThemeProvider theme={mdTheme}>
+    <ThemeProvider theme={farTheme}>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <AppBar position="absolute" open={open}>
@@ -115,12 +142,10 @@ function DashboardContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Tunnel Name
+              Sinsinawa Propagation
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+                <AccountCircleIcon />
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -145,10 +170,6 @@ function DashboardContent() {
         <Box
           component="main"
           sx={{
-            backgroundColor: (theme) =>
-              theme.palette.mode === 'light'
-                ? theme.palette.grey[100]
-                : theme.palette.grey[900],
             flexGrow: 1,
             height: '100vh',
             overflow: 'auto',
@@ -159,19 +180,17 @@ function DashboardContent() {
             <Grid container spacing={3}>
               {/* Curtains */}
               <Grid item xs={12} md={8} lg={9}>
-                <Box
+                <Paper
                   sx={{
                     pt: 0,
                     px: 2,
                     display: 'flex',
                     flexDirection: 'row',
                     height: 390,
-                    border: 1,
-                    borderColor: 'primary.light',
                   }}
                 >
                     <VentRemote></VentRemote>
-                </Box>
+                </Paper>
               </Grid>
               <Grid item xs={12} md={8} lg={9}>
                 <Box

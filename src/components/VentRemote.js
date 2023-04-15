@@ -11,9 +11,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 
-
-
-const label = { inputProps: { 'aria-label': 'Switch demo' } };
+const networkStatus = "CONNECTED"
 const marks = [
     {
         value: 0,
@@ -45,15 +43,13 @@ function VentRemoteContent() {
           <Grid sx={{ height: '100%' }} container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
               <Grid item xs={9}>
                   <Stack spacing={0} sx={{ my: 1 }}>
-                      <Typography>
-                          network status: connected
-                      </Typography>
+                      <Typography sx={{ fontSize: 12, fontWeight: 'bold', color: 'success.main'}}>NETWORK STATUS: {networkStatus}</Typography>
                       <Typography component="p" variant="h6" sx={{ fontWeight: 'bold' }}>
                           curtain-name
                       </Typography>
                       <Box display='flex' justifyContent='center' alignItems='center'>
-                          <Typography sx={{ fontSize: 'h1', fontWeight: 'bold'}} >
-                              {curtainOpenVal}
+                          <Typography sx={{ fontSize: 'h1', fontWeight: 'bold', my: 3}} >
+                              {curtainOpenVal}%
                           </Typography>
                       </Box>
                       <TableContainer>
@@ -61,12 +57,12 @@ function VentRemoteContent() {
                               <TableBody>
                                   <TableRow>
                                       <TableCell align="left"  sx={{ p: 1, borderBottom: "none" }} >
-                                          <Button variant="contained" fullWidth>
-                                              Previous
+                                          <Button variant="outlined" fullWidth>
+                                              Cancel
                                           </Button>
                                       </TableCell>
-                                      <TableCell align="right"  sx={{ p: 1, borderBottom: "none" }} >
-                                          <Button variant="contained" fullWidth>
+                                      <TableCell align="right" sx={{ p: 1, borderBottom: "none" }} >
+                                          <Button variant="contained" fullWidth color="primary">
                                               Update
                                           </Button>
                                       </TableCell>
@@ -75,24 +71,20 @@ function VentRemoteContent() {
                           </Table>
                       </TableContainer>
                       <Box sx={{
-                          border: 1,
-                          borderColor: 'primary.light',
-                          p: 1,
+                          px: 1,
+                          py: 0,
                           width: "100%",
-                          background: '#e0e0e0',
+                          background: '#e2e2d1',
                       }}>
-                          <Typography sx={{ fontWeight: 'bold' }} component="p" >
-                              thermostat
-                          </Typography>
                           <TableContainer sx={{ p: 0, my: 1 }}>
                               <Table>
                                   <TableBody >
                                       <TableRow>
-                                          <TableCell align="left"  sx={{ p: 0, borderBottom: "none" }} >
-                                              <SettingsIcon></SettingsIcon>
+                                          <TableCell align="left"  sx={{ p: 0, borderBottom: "none", fontWeight: 'bold', fontSize: 16 }} >
+                                                Thermostat
                                           </TableCell>
                                           <TableCell align="right"  sx={{ p: 0, borderBottom: "none" }} >
-                                                <Switch {...label} defaultChecked />
+                                                <SettingsIcon />
                                           </TableCell>
                                       </TableRow>
                                   </TableBody>
