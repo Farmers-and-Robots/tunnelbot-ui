@@ -1,7 +1,11 @@
 # Tunnelbot UI
 
 This is a repository for the frontend and UI for tunnelbot, a Farmers and Robots Open Source project to support small farmers with advanced tunnel automation.
+The application is built in [React](https://react.dev/) with [MUI](https://mui.com/).
+
 ## Available Scripts
+
+[Documentation to install npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 
 In the project directory, you can run:
 
