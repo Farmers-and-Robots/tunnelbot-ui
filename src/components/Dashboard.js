@@ -9,14 +9,12 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Paper from '@mui/material/Paper'
 import VentRemote from "./VentRemote";
 import { mainListItems } from './listItems';
 
@@ -180,31 +178,10 @@ function DashboardContent() {
             <Grid container spacing={3}>
               {/* Curtains */}
               <Grid item xs={12} md={8} lg={9}>
-                <Paper
-                  sx={{
-                    pt: 0,
-                    px: 2,
-                    display: 'flex',
-                    flexDirection: 'row',
-                    height: 390,
-                  }}
-                >
                     <VentRemote></VentRemote>
-                </Paper>
               </Grid>
               <Grid item xs={12} md={8} lg={9}>
-                <Box
-                    sx={{
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'row',
-                      height: 382,
-                      border: 1,
-                      borderColor: 'primary.light',
-                    }}
-                >
                     <VentRemote></VentRemote>
-                </Box>
               </Grid>
             </Grid>
             <Copyright sx={{ pt: 4 }} />
