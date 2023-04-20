@@ -24,7 +24,7 @@ const marks = [
     },
 ];
 
-function VentRemoteContent() {
+function VentRemoteContent({curtainName}) {
 
     const [curtainOpenVal, setCurtainValText] = React.useState(0);
     const handleChange = (e, newValue) => {
@@ -32,6 +32,7 @@ function VentRemoteContent() {
     }
 
   return (
+      <Grid item xs={12} md={8} lg={9}>
       <Paper
           sx={{
               pt: 0,
@@ -47,7 +48,7 @@ function VentRemoteContent() {
                       <Stack spacing={0} sx={{ my: 1 }}>
                           <Typography sx={{ fontSize: 12, fontWeight: 'bold', color: 'success.main'}}>NETWORK STATUS: {networkStatus}</Typography>
                           <Typography component="p" variant="h6" sx={{ fontWeight: 'bold' }}>
-                              curtain-name
+                              {curtainName}
                           </Typography>
                           <Box display='flex' justifyContent='center' alignItems='center'>
                               <Typography sx={{ fontSize: 'h1', fontWeight: 'bold', my: 3}} >
@@ -108,9 +109,10 @@ function VentRemoteContent() {
               </Grid>
           </Box>
       </Paper>
+      </Grid>
   );
 }
 
-export default function VentRemote() {
-  return <VentRemoteContent />;
+export default function VentRemote({curtainName}) {
+  return <VentRemoteContent curtainName={curtainName}/>;
 }

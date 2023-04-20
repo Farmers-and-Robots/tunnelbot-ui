@@ -105,6 +105,8 @@ const farTheme = createTheme({
     },
 });
 
+const curtainNames = ['Right Curtain', 'Left Curtain'];
+const curtains = curtainNames.map((curtainName, i) => <VentRemote curtainName={curtainName} key={i}/>)
 function DashboardContent() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
@@ -177,12 +179,7 @@ function DashboardContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Curtains */}
-              <Grid item xs={12} md={8} lg={9}>
-                    <VentRemote></VentRemote>
-              </Grid>
-              <Grid item xs={12} md={8} lg={9}>
-                    <VentRemote></VentRemote>
-              </Grid>
+                {curtains}
             </Grid>
             <Copyright sx={{ pt: 4 }} />
           </Container>
