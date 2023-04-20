@@ -11,7 +11,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from "@mui/material/Paper";
 
-const networkStatus = "CONNECTED"
+var networkStatus = "CONNECTED";
 const marker = String.fromCodePoint(9668)
 const marks = [
     {
@@ -29,6 +29,11 @@ function VentRemoteContent({curtainName}) {
     const [curtainOpenVal, setCurtainValText] = React.useState(0);
     const handleChange = (e, newValue) => {
         setCurtainValText(newValue)
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log({curtainOpenVal})
     }
 
   return (
@@ -65,7 +70,7 @@ function VentRemoteContent({curtainName}) {
                                               </Button>
                                           </TableCell>
                                           <TableCell align="right" sx={{ p: 1, borderBottom: "none" }} >
-                                              <Button variant="contained" fullWidth color="primary">
+                                              <Button variant="contained" fullWidth color="primary" onClick={handleSubmit}>
                                                   Update
                                               </Button>
                                           </TableCell>
