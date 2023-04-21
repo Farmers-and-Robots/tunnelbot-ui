@@ -1,8 +1,8 @@
 import * as React from 'react';
-import Dashboard from "./components/Dashboard";
+import Tunnelbot from "./components/Tunnelbot";
 
 function App() {
-  return <Dashboard></Dashboard>
+  return <Tunnelbot></Tunnelbot>
 }
 
 export default App;

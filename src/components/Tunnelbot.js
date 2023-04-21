@@ -15,7 +15,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import VentRemote from "./VentRemote";
+import CurtainRemote from "./CurtainRemote";
 import { mainListItems } from './listItems';
 
 function Copyright(props) {
@@ -106,8 +106,8 @@ const farTheme = createTheme({
 });
 
 const curtainNames = ['Right Curtain', 'Left Curtain'];
-const curtains = curtainNames.map((curtainName, i) => <VentRemote curtainName={curtainName} key={i}/>)
-function DashboardContent() {
+const curtains = curtainNames.map((curtainName, i) => <CurtainRemote curtainName={curtainName} key={i}/>)
+function TunnelbotContent() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -189,6 +189,6 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
+export default function Tunnelbot() {
+  return <TunnelbotContent />;
 }

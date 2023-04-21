@@ -24,13 +24,14 @@ const marks = [
     },
 ];
 
-function VentRemoteContent({curtainName}) {
+function CurtainRemoteContent({curtainName}) {
 
     const [curtainOpenVal, setCurtainValText] = React.useState(0);
     const handleChange = (e, newValue) => {
         setCurtainValText(newValue)
     }
 
+    {/* This is where the request to the motor and/or db will go. */}
     function handleSubmit(event) {
         event.preventDefault();
         console.log({curtainOpenVal})
@@ -118,6 +119,6 @@ function VentRemoteContent({curtainName}) {
   );
 }
 
-export default function VentRemote({curtainName}) {
-  return <VentRemoteContent curtainName={curtainName}/>;
+export default function CurtainRemote({curtainName}) {
+  return <CurtainRemoteContent curtainName={curtainName}/>;
 }
