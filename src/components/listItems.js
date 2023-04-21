@@ -7,45 +7,51 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
+import {TunnelbotCurtainIcon,
+    TunnelbotWeatherIcon,
+    TunnelbotCameraIcon,
+    TunnelbotLightsIcon,
+    TunnelbotHeatingIcon,
+    TunnelbotIrrigationIcon} from "./TunnelbotIcons";
 
 export const mainListItems = (
   <React.Fragment>
     <ListItemButton>
       <ListItemIcon>
-        <DashboardIcon />
+        <TunnelbotCurtainIcon />
       </ListItemIcon>
-      <ListItemText primary="Ventilation" />
+      <ListItemText primary="Curtains" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <TunnelbotHeatingIcon />
       </ListItemIcon>
       <ListItemText primary="Heating" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <PeopleIcon />
+        <TunnelbotIrrigationIcon />
       </ListItemIcon>
       <ListItemText primary="Irrigation" />
     </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Covers" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <LayersIcon />
+        <TunnelbotCameraIcon />
       </ListItemIcon>
       <ListItemText primary="Camera" />
     </ListItemButton>
     <ListItemButton>
         <ListItemIcon>
-            <LayersIcon />
+            <TunnelbotLightsIcon />
         </ListItemIcon>
       <ListItemText primary="Lights" />
     </ListItemButton>
-  </React.Fragment>
+    <ListItemButton>
+        <ListItemIcon>
+            <TunnelbotWeatherIcon />
+        </ListItemIcon>
+        <ListItemText primary="Weather" />
+    </ListItemButton>
+    </React.Fragment>
 );
 
