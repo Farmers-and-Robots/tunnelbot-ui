@@ -11,7 +11,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from "@mui/material/Paper";
 
-var networkStatus = "CONNECTED";
+
 const marker = String.fromCodePoint(9668)
 const marks = [
     {
@@ -24,16 +24,22 @@ const marks = [
     },
 ];
 
-function VentRemoteContent({curtainName}) {
+function CurtainRemoteContent({curtainName}) {
+    const [netStat, setNetStat] = React.useState("CONNECTED");
+    const handleNetStat = (event, newStat) => {
+        setNetStat(newStat)
+    }
 
     const [curtainOpenVal, setCurtainValText] = React.useState(0);
-    const handleChange = (e, newValue) => {
+    const handleChange = (event, newValue) => {
         setCurtainValText(newValue)
     }
 
+    {/* This is where the request to the motor and/or db will go. */}
     function handleSubmit(event) {
         event.preventDefault();
         console.log({curtainOpenVal})
+        handleNetStat(event, "UPDATING...")
     }
 
   return (
@@ -51,7 +57,12 @@ function VentRemoteContent({curtainName}) {
               <Grid sx={{ height: '100%' }} container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
                   <Grid item xs={9}>
                       <Stack spacing={0} sx={{ my: 1 }}>
-                          <Typography sx={{ fontSize: 12, fontWeight: 'bold', color: 'success.main'}}>NETWORK STATUS: {networkStatus}</Typography>
+                          <Typography sx={{ fontSize: 12,
+                              fontWeight: 'bold',
+                              color: 'success.main',
+                          }}>
+                              NETWORK STATUS: {netStat}
+                          </Typography>
                           <Typography component="p" variant="h6" sx={{ fontWeight: 'bold' }}>
                               {curtainName}
                           </Typography>
@@ -92,7 +103,7 @@ function VentRemoteContent({curtainName}) {
                                                     Thermostat
                                               </TableCell>
                                               <TableCell align="right"  sx={{ p: 0, borderBottom: "none" }} >
-                                                    <Switch />
+                                                    <Switch disabled defaultChecked />
                                               </TableCell>
                                           </TableRow>
                                       </TableBody>
@@ -118,6 +129,6 @@ function VentRemoteContent({curtainName}) {
   );
 }
 
-export default function VentRemote({curtainName}) {
-  return <VentRemoteContent curtainName={curtainName}/>;
+export default function CurtainRemote({curtainName}) {
+  return <CurtainRemoteContent curtainName={curtainName}/>;
 }

@@ -15,15 +15,15 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import VentRemote from "./VentRemote";
+import CurtainRemote from "./CurtainRemote";
 import { mainListItems } from './listItems';
 
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://farmersandrobots.com/">
+        Farmers and Robots
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -33,9 +33,7 @@ function Copyright(props) {
 
 const drawerWidth = 240;
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
+const AppBar = styled(MuiAppBar )(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -51,7 +49,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+const Drawer = styled(MuiDrawer)(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
       position: 'relative',
@@ -106,9 +104,9 @@ const farTheme = createTheme({
 });
 
 const curtainNames = ['Right Curtain', 'Left Curtain'];
-const curtains = curtainNames.map((curtainName, i) => <VentRemote curtainName={curtainName} key={i}/>)
-function DashboardContent() {
-  const [open, setOpen] = React.useState(true);
+const curtains = curtainNames.map((curtainName, i) => <CurtainRemote curtainName={curtainName} key={i}/>)
+function TunnelbotContent() {
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
@@ -189,6 +187,6 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
-  return <DashboardContent />;
+export default function Tunnelbot() {
+  return <TunnelbotContent />;
 }
