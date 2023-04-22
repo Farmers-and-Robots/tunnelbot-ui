@@ -4,7 +4,7 @@ import TunnelbotWeatherSVG from "./icons/noun-weather-1518210-2B1C1C.svg"
 import TunnelbotCameraSVG from "./icons/noun-camera-817253-2B1C1C.svg"
 import TunnelbotIrrigationSVG from "./icons/noun-water-1201714-2B1C1C.svg"
 import TunnelbotHeatingSVG from "./icons/noun-heat-689784-2B1C1C.svg"
-import TunnelbotLightsSVG from "./icons/noun-light-3773530-2B1C1C.svg"
+import TunnelbotLightsSVG from "./icons/noun-light-bulb-1508212-554949.svg"
 
 function TunnelbotCurtainIcon() {
     return (<img
