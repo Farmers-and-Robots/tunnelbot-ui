@@ -24,6 +24,32 @@ const marks = [
     },
 ];
 
+function ThermostatRemote() {
+    return (
+        <Box sx={{
+            px: 1,
+            py: 0,
+            width: "100%",
+            background: '#e2e2d1',
+        }}>
+            <TableContainer sx={{ p: 0, my: 1 }}>
+                <Table>
+                    <TableBody >
+                        <TableRow>
+                            <TableCell align="left"  sx={{ p: 0, borderBottom: "none", fontWeight: 'bold', fontSize: 16 }} >
+                                Thermostat
+                            </TableCell>
+                            <TableCell align="right"  sx={{ p: 0, borderBottom: "none" }} >
+                                <Switch disabled defaultChecked />
+                            </TableCell>
+                        </TableRow>
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </Box>
+    )
+}
+
 function CurtainRemoteContent({curtainName}) {
     const [netStat, setNetStat] = React.useState("CONNECTED");
     const handleNetStat = (event, newStat) => {
@@ -89,27 +115,7 @@ function CurtainRemoteContent({curtainName}) {
                                   </TableBody>
                               </Table>
                           </TableContainer>
-                          <Box sx={{
-                              px: 1,
-                              py: 0,
-                              width: "100%",
-                              background: '#e2e2d1',
-                          }}>
-                              <TableContainer sx={{ p: 0, my: 1 }}>
-                                  <Table>
-                                      <TableBody >
-                                          <TableRow>
-                                              <TableCell align="left"  sx={{ p: 0, borderBottom: "none", fontWeight: 'bold', fontSize: 16 }} >
-                                                    Thermostat
-                                              </TableCell>
-                                              <TableCell align="right"  sx={{ p: 0, borderBottom: "none" }} >
-                                                    <Switch disabled defaultChecked />
-                                              </TableCell>
-                                          </TableRow>
-                                      </TableBody>
-                                  </Table>
-                              </TableContainer>
-                          </Box>
+                          <ThermostatRemote />
                       </Stack>
                     </Grid>
                     <Grid item xs={3} sx={{ mb: 3, mt: 2 }}>
