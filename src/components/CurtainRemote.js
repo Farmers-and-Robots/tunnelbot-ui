@@ -93,7 +93,7 @@ function CurtainRemoteContent({curtainName}) {
                                                     Thermostat
                                               </TableCell>
                                               <TableCell align="right"  sx={{ p: 0, borderBottom: "none" }} >
-                                                    <Switch />
+                                                    <Switch disabled defaultChecked />
                                               </TableCell>
                                           </TableRow>
                                       </TableBody>

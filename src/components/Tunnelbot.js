@@ -22,8 +22,8 @@ function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
+      <Link color="inherit" href="https://farmersandrobots.com/">
+        Farmers and Robots
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -33,9 +33,7 @@ function Copyright(props) {
 
 const drawerWidth = 240;
 
-const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== 'open',
-})(({ theme, open }) => ({
+const AppBar = styled(MuiAppBar )(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(['width', 'margin'], {
     easing: theme.transitions.easing.sharp,
@@ -51,7 +49,7 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
-const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
+const Drawer = styled(MuiDrawer)(
   ({ theme, open }) => ({
     '& .MuiDrawer-paper': {
       position: 'relative',
@@ -108,7 +106,7 @@ const farTheme = createTheme({
 const curtainNames = ['Right Curtain', 'Left Curtain'];
 const curtains = curtainNames.map((curtainName, i) => <CurtainRemote curtainName={curtainName} key={i}/>)
 function TunnelbotContent() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
