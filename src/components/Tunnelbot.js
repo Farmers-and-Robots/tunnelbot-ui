@@ -74,7 +74,6 @@ const Drawer = styled(MuiDrawer)(
     },
   }),
 );
-
 const farTheme = createTheme({
     palette: {
         mode: 'light',

@@ -26,6 +26,7 @@ firebase-error.log*
 
 # Misc
 .firebase/*
+*/firebase.js
 __generated__
 .DS_Store
 .env.local

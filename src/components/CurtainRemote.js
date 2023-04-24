@@ -92,8 +92,8 @@ function CurtainRemoteContent({curtainName}) {
                           <Typography component="p" variant="h6" sx={{ fontWeight: 'bold' }}>
                               {curtainName}
                           </Typography>
-                          <Box display='flex' justifyContent='center' alignItems='center'>
-                              <Typography sx={{ fontSize: 'h1', fontWeight: 'bold', my: 3}} >
+                          <Box display='flex' justifyContent='center' alignItems='center' sx={{ my: 2 }}>
+                              <Typography variant="h1" sx={{ fontWeight: 'bold', my: 3}} >
                                   {curtainOpenVal}%
                               </Typography>
                           </Box>
