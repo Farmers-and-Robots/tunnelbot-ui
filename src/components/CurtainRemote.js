@@ -77,6 +77,7 @@ function CurtainRemoteContent({curtainName}) {
               display: 'flex',
               flexDirection: 'row',
               height: 390,
+              maxWidth: 500,
           }}
       >
           <Box sx={{ flexGrow: 1 }}>
