@@ -17,6 +17,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CurtainRemote from "./CurtainRemote";
 import { mainListItems } from './listItems';
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props) {
   return (
@@ -105,6 +108,23 @@ const farTheme = createTheme({
 const curtainNames = ['Right Curtain', 'Left Curtain'];
 const curtains = curtainNames.map((curtainName, i) => <CurtainRemote curtainName={curtainName} key={i}/>)
 function TunnelbotContent() {
+    const navigate = useNavigate()
+    React.useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                const uid = user.uid;
+                console.log("uid", uid)
+            } else {
+                // User is signed out
+                navigate("/login")
+                console.log("user is logged out")
+            }
+        });
+
+    }, [])
+
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
