@@ -10,6 +10,8 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from "@mui/material/Paper";
+import { db } from "../firebase"
+import { onValue, ref } from "firebase/database"
 
 
 const marker = String.fromCodePoint(9668)
@@ -56,7 +58,17 @@ function CurtainRemoteContent({curtainName}) {
         setNetStat(newStat)
     }
 
-    const [curtainOpenVal, setCurtainValText] = React.useState(0);
+    let curtainData = 0
+    React.useEffect(() => {
+        const curtainId = curtainName.split(' ').join('_')
+        const query = ref(db, curtainId)
+        return onValue(query, (snapshot) => {
+            curtainData = snapshot.val();
+            console.log(curtainData)
+        });
+    }, []);
+
+    const [curtainOpenVal, setCurtainValText] = React.useState(curtainData);
     const handleChange = (event, newValue) => {
         setCurtainValText(newValue)
     }
