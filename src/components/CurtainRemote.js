@@ -11,7 +11,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from "@mui/material/Paper";
 import { db } from "../firebase"
-import { onValue, ref, set } from "firebase/database"
+import { onValue, ref, set, update } from "firebase/database"
 
 
 const marker = String.fromCodePoint(9668)
@@ -61,13 +61,11 @@ function CurtainRemoteContent({curtainName}) {
     const [sliderVal, setSliderVal] = React.useState(0)
     const [curtainOpenVal, setCurtainValText] = React.useState(null);
     const curtainId = curtainName.split(' ').join('_').toLowerCase();
-    const [curtainOnloadVal, setCurtainOnloadVal] = React.useState(null);
     React.useEffect(() => {
         const query = ref(db, curtainId)
         return onValue(query, (snapshot) => {
             setCurtainValText(snapshot.val()["current_posistion"])
             setSliderVal(snapshot.val()["current_posistion"])
-            setCurtainOnloadVal(snapshot.val()["current_posistion"])
         });
     }, []);
 
@@ -80,19 +78,18 @@ function CurtainRemoteContent({curtainName}) {
     function handleSubmit(event) {
         event.preventDefault();
         console.log({curtainOpenVal})
-        console.log({curtainOnloadVal})
         handleNetStat(event, "UPDATING...")
-        set(ref(db, curtainId), {
-            current_posistion: curtainOnloadVal,
+        update(ref(db, curtainId), {
             desired_posisition: curtainOpenVal
         });
-        const curtainCommand = "move_" + curtainId
-        set(ref(db, 'control/'), {
-            command: curtainCommand,
+        let moveCommand = "move_" + curtainId
+        set(ref(db, 'command'), {
+            command: moveCommand,
             command_executed: false
-        });
+        })
+        setSliderVal(curtainOpenVal)
+        setCurtainValText(curtainOpenVal)
     }
-
   return (
       <Grid item xs={12} md={8} lg={9}>
       <Paper
