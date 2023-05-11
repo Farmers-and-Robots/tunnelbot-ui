@@ -11,7 +11,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from "@mui/material/Paper";
 import { db } from "../firebase"
-import { onValue, ref } from "firebase/database"
+import { onValue, ref, set } from "firebase/database"
 
 
 const marker = String.fromCodePoint(9668)
@@ -58,26 +58,39 @@ function CurtainRemoteContent({curtainName}) {
         setNetStat(newStat)
     }
 
-    let curtainData = 0
+    const [sliderVal, setSliderVal] = React.useState(0)
+    const [curtainOpenVal, setCurtainValText] = React.useState(null);
+    const curtainId = curtainName.split(' ').join('_').toLowerCase();
+    const [curtainOnloadVal, setCurtainOnloadVal] = React.useState(null);
     React.useEffect(() => {
-        const curtainId = curtainName.split(' ').join('_')
         const query = ref(db, curtainId)
         return onValue(query, (snapshot) => {
-            curtainData = snapshot.val();
-            console.log(curtainData)
+            setCurtainValText(snapshot.val()["current_posistion"])
+            setSliderVal(snapshot.val()["current_posistion"])
+            setCurtainOnloadVal(snapshot.val()["current_posistion"])
         });
     }, []);
 
-    const [curtainOpenVal, setCurtainValText] = React.useState(curtainData);
     const handleChange = (event, newValue) => {
         setCurtainValText(newValue)
+        setSliderVal(newValue)
     }
 
     {/* This is where the request to the motor and/or db will go. */}
     function handleSubmit(event) {
         event.preventDefault();
         console.log({curtainOpenVal})
+        console.log({curtainOnloadVal})
         handleNetStat(event, "UPDATING...")
+        set(ref(db, curtainId), {
+            current_posistion: curtainOnloadVal,
+            desired_posisition: curtainOpenVal
+        });
+        const curtainCommand = "move_" + curtainId
+        set(ref(db, 'control/'), {
+            command: curtainCommand,
+            command_executed: false
+        });
     }
 
   return (
@@ -135,7 +148,7 @@ function CurtainRemoteContent({curtainName}) {
                           <Slider
                               aria-label="Percent Open"
                               orientation="vertical"
-                              defaultValue={0}
+                              value={sliderVal}
                               onChange={handleChange}
                               valueLabelDisplay="off"
                               marks={marks}
