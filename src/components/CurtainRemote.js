@@ -64,8 +64,8 @@ function CurtainRemoteContent({curtainName}) {
     React.useEffect(() => {
         const query = ref(db, curtainId)
         return onValue(query, (snapshot) => {
-            setCurtainValText(snapshot.val()["current_posistion"])
-            setSliderVal(snapshot.val()["current_posistion"])
+            setCurtainValText(snapshot.val()["current_position"])
+            setSliderVal(snapshot.val()["current_position"])
         });
     }, []);
 
