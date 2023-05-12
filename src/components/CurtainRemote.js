@@ -80,7 +80,7 @@ function CurtainRemoteContent({curtainName}) {
         console.log({curtainOpenVal})
         handleNetStat(event, "UPDATING...")
         update(ref(db, curtainId), {
-            desired_posisition: curtainOpenVal
+            desired_position: curtainOpenVal
         });
         let moveCommand = "move_" + curtainId
         set(ref(db, 'command'), {
