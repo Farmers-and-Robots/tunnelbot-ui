@@ -122,7 +122,7 @@ function CurtainRemoteContent({curtainName}) {
 
         setTimeout(() => {
             handleNetStat("CONNECTED")
-        }, 30000);
+        }, 100000);
         {/* TODO learn how to use current state in React to prevent this from changing. */}
         setSliderVal(curtainOpenVal)
         setCurtainValText(curtainOpenVal)
