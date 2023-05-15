@@ -63,10 +63,11 @@ function CurtainRemoteContent({curtainName}) {
         setNetStat(newStat)
     }
     {/* checkCurtainCommand polls the db to see if the driver has updated the curtain. */}
-    function checkCurtainCommandComplete() {
+    function curtainCommandComplete() {
         db.ref('command').on('value', (snapshot) => {
             if (snapshot.val()["command_executed"]) {
                 handleNetStat("SUCCESS")
+                return true
             }
         }, (error) => {
             console.log('read failed: ' + error.name)
@@ -113,10 +114,15 @@ function CurtainRemoteContent({curtainName}) {
             handleNetStat("ERROR")
         });
 
-        curtainChanged = setInterval(checkCurtainCommandComplete, 3000);
+        let checkCurtainStatus = setInterval(function () {
+            if (curtainCommandComplete()) {
+                clearInterval(checkCurtainStatus)
+            }
+        }, 3000);
+
         setTimeout(() => {
             handleNetStat("CONNECTED")
-        }, 3000);
+        }, 30000);
         {/* TODO learn how to use current state in React to prevent this from changing. */}
         setSliderVal(curtainOpenVal)
         setCurtainValText(curtainOpenVal)
