@@ -11,7 +11,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from "@mui/material/Paper";
 import { db } from "../firebase"
-import { onValue, ref, set, update } from "firebase/database"
+import { onValue, ref } from "firebase/database"
 
 
 const marker = String.fromCodePoint(9668)
@@ -52,15 +52,31 @@ function ThermostatRemote() {
     )
 }
 
+
+
 function CurtainRemoteContent({curtainName}) {
+    const curtainId = curtainName.split(' ').join('_').toLowerCase();
+    let moveCommand = "move_" + curtainId
     const [netStat, setNetStat] = React.useState("CONNECTED");
-    const handleNetStat = (event, newStat) => {
+    {/* handleNetStat changes the Network Status in the header of the curtain box. */}
+    function handleNetStat (newStat) {
         setNetStat(newStat)
     }
+    {/* checkCurtainCommand polls the db to see if the driver has updated the curtain. */}
+    function checkCurtainCommandComplete() {
+        db.ref('command').on('value', (snapshot) => {
+            if (snapshot.val()["command_executed"]) {
+                handleNetStat("SUCCESS")
+            }
+        }, (error) => {
+            console.log('read failed: ' + error.name)
+        });
+    }
 
+    {/* Set the slider and the curtain value text as percent. */}
     const [sliderVal, setSliderVal] = React.useState(0)
     const [curtainOpenVal, setCurtainValText] = React.useState(null);
-    const curtainId = curtainName.split(' ').join('_').toLowerCase();
+
     React.useEffect(() => {
         const query = ref(db, curtainId)
         return onValue(query, (snapshot) => {
@@ -74,19 +90,34 @@ function CurtainRemoteContent({curtainName}) {
         setSliderVal(newValue)
     }
 
-    {/* This is where the request to the motor and/or db will go. */}
+    {/* This is the request to the db to change the motor. */}
     function handleSubmit(event) {
         event.preventDefault();
         console.log({curtainOpenVal})
-        handleNetStat(event, "UPDATING...")
-        update(ref(db, curtainId), {
+
+        db.ref(curtainId).update( {
             desired_position: curtainOpenVal
+        }).then(() => {
+            console.log("desired position set to " + curtainOpenVal)
+        }, function(error) {
+            console.error(error);
+            handleNetStat("ERROR")
         });
-        let moveCommand = "move_" + curtainId
-        set(ref(db, 'command'), {
+        db.ref('command').set( {
             command: moveCommand,
             command_executed: false
-        })
+        }).then(() => {
+            handleNetStat("UPDATING...")
+        }, function(error) {
+            console.error(error);
+            handleNetStat("ERROR")
+        });
+
+        curtainChanged = setInterval(checkCurtainCommandComplete, 3000);
+        setTimeout(() => {
+            handleNetStat("CONNECTED")
+        }, 3000);
+        {/* TODO learn how to use current state in React to prevent this from changing. */}
         setSliderVal(curtainOpenVal)
         setCurtainValText(curtainOpenVal)
     }
