@@ -20,19 +20,8 @@ import { mainListItems } from './listItems';
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
+import FaRCopyright from "./FaRCopyright"
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://farmersandrobots.com/">
-        Farmers and Robots
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 const drawerWidth = 240;
 
@@ -198,7 +187,7 @@ function TunnelbotContent() {
               {/* Curtains */}
                 {curtains}
             </Grid>
-            <Copyright sx={{ pt: 4 }} />
+            <FaRCopyright sx={{ pt: 4 }} />
           </Container>
         </Box>
       </Box>

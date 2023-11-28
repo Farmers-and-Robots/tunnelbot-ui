@@ -15,20 +15,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {  signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { NavLink, useNavigate } from "react-router-dom";
-
-
-function Copyright(props) {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://farmersandrobots.com/">
-                Farmers and Robots
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+import FaRCopyright from "./FaRCopyright"
 
 const theme = createTheme();
 
@@ -121,7 +108,7 @@ export default function SignIn() {
                         </Grid>
                     </Box>
                 </Box>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
+                <FaRCopyright sx={{ mt: 8, mb: 4 }} />
             </Container>
         </ThemeProvider>
     );
