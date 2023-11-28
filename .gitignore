@@ -35,3 +35,4 @@ __generated__
 .yarn-integrity
 backup.sql
 VERSION
+src/firebase.js
