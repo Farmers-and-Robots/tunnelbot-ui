@@ -2,7 +2,6 @@ import * as React from 'react';
 import Tunnelbot from "./components/Tunnelbot";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
-import Profile from "./components/Profile"
 import { BrowserRouter as Router } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
