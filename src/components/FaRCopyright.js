@@ -5,7 +5,7 @@ import * as React from "react";
 export default function FaRCopyright(props) {
     return (
         <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'FaRCopyright © '}
+            {'Copyright © '}
             <Link color="inherit" href="https://farmersandrobots.com/">
                 Farmers and Robots
             </Link>{' '}
