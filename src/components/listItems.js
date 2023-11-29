@@ -1,13 +1,13 @@
-import * as React from 'react';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+import * as React from "react";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
 import {TunnelbotCurtainIcon,
-    TunnelbotWeatherIcon,
-    TunnelbotCameraIcon,
-    TunnelbotLightsIcon,
-    TunnelbotHeatingIcon,
-    TunnelbotIrrigationIcon} from "./TunnelbotIcons";
+  TunnelbotWeatherIcon,
+  TunnelbotCameraIcon,
+  TunnelbotLightsIcon,
+  TunnelbotHeatingIcon,
+  TunnelbotIrrigationIcon} from "./TunnelbotIcons";
 
 export const mainListItems = (
   <React.Fragment>
@@ -36,17 +36,17 @@ export const mainListItems = (
       <ListItemText primary="Camera" />
     </ListItemButton>
     <ListItemButton>
-        <ListItemIcon>
-            <TunnelbotLightsIcon />
-        </ListItemIcon>
+      <ListItemIcon>
+        <TunnelbotLightsIcon />
+      </ListItemIcon>
       <ListItemText primary="Lights" />
     </ListItemButton>
     <ListItemButton>
-        <ListItemIcon>
-            <TunnelbotWeatherIcon />
-        </ListItemIcon>
-        <ListItemText primary="Weather" />
+      <ListItemIcon>
+        <TunnelbotWeatherIcon />
+      </ListItemIcon>
+      <ListItemText primary="Weather" />
     </ListItemButton>
-    </React.Fragment>
+  </React.Fragment>
 );
 
