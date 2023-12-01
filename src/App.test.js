@@ -25,10 +25,3 @@ test("loads and displays SignUp link", async () => {
   // ASSERT
   expect(screen.getByRole("heading")).toHaveTextContent("Sign in")
 })
-<<<<<<< Updated upstream
-
-//  test("navigating to non-existing route", async () => {
-// Given a browser history…
-
-=======
->>>>>>> Stashed changes
