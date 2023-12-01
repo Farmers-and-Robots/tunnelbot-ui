@@ -1,31 +1,27 @@
-import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
-import { Router } from "react-router-dom";
-import { createMemoryHistory } from "history";
-import App from "./App";
+import React from "react"
+import {render, screen} from "@testing-library/react"
+import fireEvent from "@testing-library/user-event"
+import "@testing-library/jest-dom"
+import SignIn from "./components/SignIn"
+import { BrowserRouter as Router } from "react-router-dom";
+import {act} from "react-dom/test-utils";
 
-describe("Routing integration tests", () => {
-  test("navigating to /signup", async () => {
-    // Given a browser history object
-    const history = createMemoryHistory();
 
-    // And the app is rendered with the history object
-    render(
-      <Router history={history}>
-        <App/>
-      </Router>
-    );
+test("loads and displays SignUp link", async () => {
+  // ARRANGE
+  render(
+    <Router>
+      <SignIn url="/signin" />
+    </Router>)
 
-    // When the "/signup" link is clicked
-    fireEvent.click(screen.getByText(/No account/));
+  // ACT
+  act(() => {
+    fireEvent.click(screen.getByText("Sign in"))
+    screen.findByRole("heading")
+  }
+  )
 
-    // Then the URL should update to "/signup"
-    await waitFor(() => expect(history.location.pathname).toEqual("/signup"));
 
-    // And the about page should be displayed
-    // expect(screen.getByText(/Sign Up/i)).toBeTruthy();
-  });
+  // ASSERT
+  expect(screen.getByRole("heading")).toHaveTextContent("Sign in")
 })
-
-//  test("navigating to non-existing route", async () => {
-// Given a browser history…
