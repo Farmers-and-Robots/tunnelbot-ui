@@ -1,10 +1,31 @@
-import { render, screen } from "@testing-library/react";
+import React from "react";
+import { render, screen, waitFor } from "@testing-library/react";
+import { Router } from "react-router-dom";
+import { createMemoryHistory } from "history";
 import App from "./App";
 
+describe("Routing integration tests", () => {
+  test("navigating to /signup", async () => {
+    // Given a browser history object
+    const history = createMemoryHistory();
 
-test("renders learn react link", () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  // eslint-disable-next-line no-undef
-  expect(linkElement).toBeInTheDocument();
-});
+    // And the app is rendered with the history object
+    render(
+      <Router history={history}>
+        <App/>
+      </Router>
+    );
+
+    // When the "/signup" link is clicked
+    fireEvent.click(screen.getByText(/No account/));
+
+    // Then the URL should update to "/signup"
+    await waitFor(() => expect(history.location.pathname).toEqual("/signup"));
+
+    // And the about page should be displayed
+    // expect(screen.getByText(/Sign Up/i)).toBeTruthy();
+  });
+})
+
+//  test("navigating to non-existing route", async () => {
+// Given a browser history…
