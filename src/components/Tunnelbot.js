@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
+import { styled, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
@@ -20,6 +20,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import FaRCopyright from "./FaRCopyright"
+import {farTheme} from "./farTheme";
 
 const drawerWidth = 240;
 
@@ -64,33 +65,6 @@ const Drawer = styled(MuiDrawer)(
     },
   }),
 );
-const farTheme = createTheme({
-  palette: {
-    mode: "light",
-    primary: {
-      main: "#2b1C1C",
-    },
-    secondary: {
-      main: "#f79422",
-    },
-    background: {
-      default: "#e2e2d1",
-      paper: "#F0F0DD",
-    },
-    success: {
-      main: "#839339",
-    },
-    warning: {
-      main: "#f79422",
-    },
-    info: {
-      main: "#355a6c",
-    },
-    error: {
-      main: "#d13345",
-    },
-  },
-});
 
 const curtainNames = ["Right Curtain", "Left Curtain"];
 const curtains = curtainNames.map((curtainName, i) => <CurtainRemote curtainName={curtainName} key={i}/>)

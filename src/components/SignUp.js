@@ -10,13 +10,13 @@ import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { NavLink, useNavigate } from "react-router-dom";
 import {  createUserWithEmailAndPassword  } from "firebase/auth";
 import { auth } from "../firebase";
 import FaRCopyright from "./FaRCopyright"
+import {farTheme} from "./farTheme";
 
-const theme = createTheme();
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ export default function SignUp() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={farTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
