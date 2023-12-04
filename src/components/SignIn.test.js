@@ -2,12 +2,12 @@ import React from "react"
 import {render, screen} from "@testing-library/react"
 import fireEvent from "@testing-library/user-event"
 import "@testing-library/jest-dom"
-import SignIn from "./components/SignIn"
+import SignIn from "./SignIn"
 import { BrowserRouter as Router } from "react-router-dom";
 import {act} from "react-dom/test-utils";
 
 
-test("loads and displays SignUp link", async () => {
+test("loads and displays SignIn page", async () => {
   // ARRANGE
   render(
     <Router>
