@@ -21,7 +21,6 @@ test("loads and displays SignIn page", async () => {
   }
   )
 
-
   // ASSERT
   expect(screen.getByRole("heading")).toHaveTextContent("Sign in")
 })

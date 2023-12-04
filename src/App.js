@@ -11,7 +11,7 @@ function App() {
       <div>
         <section>
           <Routes>
-            <Route path="/" element={<SignIn/>}></Route>
+            <Route path="/" element={<Tunnelbot/>}></Route>
             <Route path="/signup" element={<SignUp/>}></Route>
             <Route path="/signin" element={<SignIn/>}></Route>
             <Route path="/tunnelbot" element={<Tunnelbot/>}></Route>

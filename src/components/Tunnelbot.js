@@ -79,7 +79,7 @@ function TunnelbotContent() {
         console.log("uid", uid)
       } else {
         // User is signed out
-        navigate("/login")
+        navigate("/signin")
         console.log("user is logged out")
       }
     });
