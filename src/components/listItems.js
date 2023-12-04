@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom"
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -11,37 +12,37 @@ import {TunnelbotCurtainIcon,
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton component={ Link } to={ "/"}>
       <ListItemIcon>
         <TunnelbotCurtainIcon />
       </ListItemIcon>
       <ListItemText primary="Curtains" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={ Link } to={ "/"}>
       <ListItemIcon>
         <TunnelbotHeatingIcon />
       </ListItemIcon>
       <ListItemText primary="Heating" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={ Link } to={ "/"}>
       <ListItemIcon>
         <TunnelbotIrrigationIcon />
       </ListItemIcon>
       <ListItemText primary="Irrigation" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={ Link } to={ "/"}>
       <ListItemIcon>
         <TunnelbotCameraIcon />
       </ListItemIcon>
       <ListItemText primary="Camera" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={ Link } to={ "/"}>
       <ListItemIcon>
         <TunnelbotLightsIcon />
       </ListItemIcon>
       <ListItemText primary="Lights" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component={ Link } to={ "/"}>
       <ListItemIcon>
         <TunnelbotWeatherIcon />
       </ListItemIcon>

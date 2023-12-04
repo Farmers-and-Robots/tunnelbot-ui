@@ -68,6 +68,7 @@ const Drawer = styled(MuiDrawer)(
 
 const curtainNames = ["Right Curtain", "Left Curtain"];
 const curtains = curtainNames.map((curtainName, i) => <CurtainRemote curtainName={curtainName} key={i}/>)
+
 function TunnelbotContent() {
   const navigate = useNavigate()
   React.useEffect(()=>{
@@ -120,7 +121,7 @@ function TunnelbotContent() {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Sinsinawa Propagation
+              Tunnelbot
             </Typography>
             <IconButton color="inherit">
               <AccountCircleIcon />
@@ -154,13 +155,15 @@ function TunnelbotContent() {
           }}
         >
           <Toolbar />
+
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               {/* Curtains */}
-              {curtains}
+              { curtains }
             </Grid>
             <FaRCopyright sx={{ pt: 4 }} />
           </Container>
+
         </Box>
       </Box>
     </ThemeProvider>
