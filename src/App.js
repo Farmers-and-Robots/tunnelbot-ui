@@ -3,6 +3,7 @@ import Tunnelbot from "./components/Tunnelbot";
 import { BrowserRouter as Router } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+import PageNotFound from "./components/PageNotFound"
 // import Cameras from "./components/Cameras"
 // import Weather from "./components/Weather"
 // import Heating from "./components/Heating"
@@ -28,6 +29,7 @@ function App() {
               {/*<Route path="/lights" element={<Lights/>}></Route>*/}
               {/*<Route path="/weather" element={<Weather/>}></Route>*/}
             </Route>
+            <Route path="*" element={<PageNotFound/>}></Route>
           </Routes>
         </section>
       </div>
