@@ -80,6 +80,14 @@ export default function SignIn() {
               autoComplete="current-password"
               onChange={(e)=>setPassword(e.target.value)}
             />
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="farm"
+              label="Farm"
+              id="farm"
+            />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
