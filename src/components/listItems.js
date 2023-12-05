@@ -1,4 +1,5 @@
 import * as React from "react";
+//import { useState } from "react";
 import { Link } from "react-router-dom"
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -12,42 +13,42 @@ import {TunnelbotCurtainIcon,
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton component={ Link } to={ "/curtains" }>
+    <ListItemButton component={Link} to={"/tunnelbot/curtains"}>
       <ListItemIcon>
-        <TunnelbotCurtainIcon />
+        <TunnelbotCurtainIcon/>
       </ListItemIcon>
-      <ListItemText primary="Curtains" />
+      <ListItemText primary="Curtains"/>
     </ListItemButton>
-    <ListItemButton component={ Link } to={ "/heating" }>
+    <ListItemButton component={Link} to={"/tunnelbot/heating"}>
       <ListItemIcon>
-        <TunnelbotHeatingIcon />
+        <TunnelbotHeatingIcon/>
       </ListItemIcon>
-      <ListItemText primary="Heating" />
+      <ListItemText primary="Heating"/>
     </ListItemButton>
-    <ListItemButton component={ Link } to={ "/irrigation" }>
+    <ListItemButton component={Link} to={"/tunnelbot/irrigation"}>
       <ListItemIcon>
-        <TunnelbotIrrigationIcon />
+        <TunnelbotIrrigationIcon/>
       </ListItemIcon>
-      <ListItemText primary="Irrigation" />
+      <ListItemText primary="Irrigation"/>
     </ListItemButton>
-    <ListItemButton component={ Link } to={ "/camera" }>
+    <ListItemButton component={Link} to={"/tunnelbot/camera"}>
       <ListItemIcon>
-        <TunnelbotCameraIcon />
+        <TunnelbotCameraIcon/>
       </ListItemIcon>
-      <ListItemText primary="Camera" />
+      <ListItemText primary="Camera"/>
     </ListItemButton>
-    <ListItemButton component={ Link } to={ "/lights" }>
+    <ListItemButton component={Link} to={"/tunnelbot/lights"}>
       <ListItemIcon>
-        <TunnelbotLightsIcon />
+        <TunnelbotLightsIcon/>
       </ListItemIcon>
-      <ListItemText primary="Lights" />
+      <ListItemText primary="Lights"/>
     </ListItemButton>
-    <ListItemButton component={ Link } to={ "/weather" }>
+    <ListItemButton component={Link} to={"/tunnelbot/weather"}>
       <ListItemIcon>
-        <TunnelbotWeatherIcon />
+        <TunnelbotWeatherIcon/>
       </ListItemIcon>
-      <ListItemText primary="Weather" />
+      <ListItemText primary="Weather"/>
     </ListItemButton>
   </React.Fragment>
-);
+)
 
