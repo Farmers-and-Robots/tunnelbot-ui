@@ -13,10 +13,10 @@ import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import Button from "@mui/material/Button";
 import CurtainRemote from "./CurtainRemote";
 import { mainListItems } from "./listItems";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import { useNavigate } from "react-router-dom";
 import FaRCopyright from "./FaRCopyright"
@@ -81,11 +81,21 @@ function TunnelbotContent() {
       } else {
         // User is signed out
         navigate("/signin")
-        console.log("user is logged out")
+        console.log("user is signed out")
       }
     });
 
   }, [])
+
+  const handleSignOut = () => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      navigate("/signin");
+      console.log("Signed out successfully")
+    }).catch((error) => {
+      console.log(error)
+    });
+  }
 
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
@@ -123,9 +133,7 @@ function TunnelbotContent() {
             >
               Tunnelbot
             </Typography>
-            <IconButton color="inherit">
-              <AccountCircleIcon />
-            </IconButton>
+            <Button color="inherit" onClick={handleSignOut}>Sign Out</Button>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
