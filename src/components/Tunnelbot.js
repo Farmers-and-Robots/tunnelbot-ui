@@ -14,7 +14,7 @@ import Grid from "@mui/material/Grid";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "@mui/material/Button";
-import CurtainRemote from "./CurtainRemote";
+import Curtain from "./Curtains";
 import  {mainListItems} from "./listItems";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
@@ -67,7 +67,7 @@ const Drawer = styled(MuiDrawer)(
 );
 
 const curtainNames = ["Right Curtain", "Left Curtain"];
-const curtains = curtainNames.map((curtainName, i) => <CurtainRemote curtainName={curtainName} key={i}/>)
+const curtains = curtainNames.map((curtainName, i) => <Curtain curtainName={curtainName} key={i}/>)
 
 function TunnelbotContent() {
   const navigate = useNavigate()

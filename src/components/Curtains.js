@@ -195,6 +195,6 @@ function CurtainRemoteContent({curtainName}) {
   );
 }
 
-export default function CurtainRemote({curtainName}) {
+export default function Curtain ({curtainName}) {
   return <CurtainRemoteContent curtainName={curtainName}/>;
 }
