@@ -1,6 +1,6 @@
 import * as React from "react";
 //import { useState } from "react";
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -49,7 +49,6 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Weather"/>
     </ListItemButton>
-    <Outlet/>
   </React.Fragment>
 )
 

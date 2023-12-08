@@ -14,11 +14,10 @@ import Grid from "@mui/material/Grid";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "@mui/material/Button";
-import Curtain from "./Curtains";
 import  {mainListItems} from "./listItems";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../firebase";
-import { useNavigate } from "react-router-dom";
+import {Outlet, useNavigate} from "react-router-dom";
 import FaRCopyright from "./FaRCopyright"
 import {farTheme} from "./farTheme";
 
@@ -65,9 +64,6 @@ const Drawer = styled(MuiDrawer)(
     },
   }),
 );
-
-const curtainNames = ["Right Curtain", "Left Curtain"];
-const curtains = curtainNames.map((curtainName, i) => <Curtain curtainName={curtainName} key={i}/>)
 
 function TunnelbotContent() {
   const navigate = useNavigate()
@@ -166,8 +162,7 @@ function TunnelbotContent() {
 
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-              {/* Curtains */}
-              { curtains }
+              <Outlet/>
             </Grid>
             <FaRCopyright sx={{ pt: 4 }} />
           </Container>

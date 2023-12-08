@@ -55,6 +55,8 @@ function ThermostatRemote() {
 
 
 function CurtainRemoteContent({curtainName}) {
+//  const curtainNames = ["Right Curtain", "Left Curtain"];
+//  const curtains = curtainNames.map((curtainName, i) => <Curtain curtainName={curtainName} key={i}/>)
   const curtainId = curtainName.split(" ").join("_").toLowerCase();
   let moveCommand = "move_" + curtainId
   const [netStat, setNetStat] = React.useState("CONNECTED");
