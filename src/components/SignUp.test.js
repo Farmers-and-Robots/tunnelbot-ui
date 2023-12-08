@@ -20,8 +20,7 @@ test("loads and displays SignUp link", async () => {
     screen.findByRole("heading")
   }
   )
-
-
+  
   // ASSERT
   expect(screen.getByRole("heading")).toHaveTextContent("Sign up")
 })
