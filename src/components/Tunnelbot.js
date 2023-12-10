@@ -42,7 +42,8 @@ const AppBar = styled(MuiAppBar )(({ theme, open }) => ({
 const Drawer = styled(MuiDrawer)(
   ({ theme, open }) => ({
     "& .MuiDrawer-paper": {
-      position: "relative",
+      position: "absolute",
+      flexShrink: 0,
       whiteSpace: "nowrap",
       width: drawerWidth,
       transition: theme.transitions.create("width", {
@@ -132,7 +133,8 @@ function TunnelbotContent() {
             <Button color="inherit" onClick={handleSignOut}>Sign Out</Button>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open}>
+        <Drawer variant="permanent" open={open}
+          PaperProps={{ elevation: 0}}>
           <Toolbar
             sx={{
               display: "flex",
@@ -156,6 +158,7 @@ function TunnelbotContent() {
             flexGrow: 1,
             height: "100vh",
             overflow: "auto",
+            ml: 7
           }}
         >
           <Toolbar />
