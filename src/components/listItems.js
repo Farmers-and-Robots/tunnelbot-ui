@@ -9,10 +9,19 @@ import {TunnelbotCurtainIcon,
   TunnelbotCameraIcon,
   TunnelbotLightsIcon,
   TunnelbotHeatingIcon,
-  TunnelbotIrrigationIcon} from "./TunnelbotIcons";
+  TunnelbotIrrigationIcon,
+  TunnelbotFarmIcon,
+  TunnelbotProfileIcon,
+} from "./TunnelbotIcons";
 
 export const mainListItems = (
   <React.Fragment>
+    <ListItemButton component={Link} to={"/tunnelbot/farm"}>
+      <ListItemIcon>
+        <TunnelbotFarmIcon/>
+      </ListItemIcon>
+      <ListItemText primary="Farm"/>
+    </ListItemButton>
     <ListItemButton component={Link} to={"/tunnelbot/curtains"}>
       <ListItemIcon>
         <TunnelbotCurtainIcon/>
@@ -48,6 +57,12 @@ export const mainListItems = (
         <TunnelbotWeatherIcon/>
       </ListItemIcon>
       <ListItemText primary="Weather"/>
+    </ListItemButton>
+    <ListItemButton component={Link} to={"/tunnelbot/profile"}>
+      <ListItemIcon>
+        <TunnelbotProfileIcon/>
+      </ListItemIcon>
+      <ListItemText primary="Profile"/>
     </ListItemButton>
   </React.Fragment>
 )
