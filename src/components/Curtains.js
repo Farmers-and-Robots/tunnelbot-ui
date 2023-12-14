@@ -12,6 +12,8 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { db } from "../firebase"
 import { onValue, ref } from "firebase/database"
+import TunnelSelector from "./TunnelSelector";
+import CreateButton from "./CreateButton";
 
 
 const marker = String.fromCodePoint(9668)
@@ -130,67 +132,72 @@ function CurtainRemoteContent({curtainName}) {
     setCurtainValText(curtainOpenVal)
   }
   return (
-    <Paper
-      sx={{
-        pt: 0,
-        px: 2,
-        display: "flex",
-        flexDirection: "row",
-        height: 390,
-      }}
-    >
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid sx={{ height: "100%" }} container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
-          <Grid item xs={9}>
-            <Stack spacing={0} sx={{ my: 1 }}>
-              <Typography sx={{ fontSize: 12,
-                fontWeight: "bold",
-                color: "success.main",
-              }}>
+    <Box>
+      <TunnelSelector/>
+      <Paper
+        sx={{
+          pt: 0,
+          px: 2,
+          display: "flex",
+          flexDirection: "row",
+          height: 390,
+        }}
+      >
+        <Box sx={{ flexGrow: 1 }}>
+          <Grid sx={{ height: "100%" }} container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} >
+            <Grid item xs={9}>
+              <Stack spacing={0} sx={{ my: 1 }}>
+                <Typography sx={{ fontSize: 12,
+                  fontWeight: "bold",
+                  color: "success.main",
+                }}>
                                     NETWORK STATUS: {netStat}
-              </Typography>
-              <Typography component="p" variant="h6" sx={{ fontWeight: "bold" }}>
-                {curtainName}
-              </Typography>
-              <Box display='flex' justifyContent='center' alignItems='center' sx={{ my: 2 }}>
-                <Typography variant="h1" sx={{ fontWeight: "bold", my: 3}} >
-                  {curtainOpenVal}%
                 </Typography>
-              </Box>
-              <TableContainer>
-                <Table  sx={{ mb: 1 }}>
-                  <TableBody>
-                    <TableRow>
-                      <TableCell align="left"  sx={{ p: 1, borderBottom: "none" }} >
-                        <Button variant="outlined" fullWidth>
+                <Typography component="p" variant="h6" sx={{ fontWeight: "bold" }}>
+                  {curtainName}
+                </Typography>
+                <Box display='flex' justifyContent='center' alignItems='center' sx={{ my: 2 }}>
+                  <Typography variant="h1" sx={{ fontWeight: "bold", my: 3}} >
+                    {curtainOpenVal}%
+                  </Typography>
+                </Box>
+                <TableContainer>
+                  <Table  sx={{ mb: 1 }}>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell align="left"  sx={{ p: 1, borderBottom: "none" }} >
+                          <Button variant="outlined" fullWidth>
                                                         Cancel
-                        </Button>
-                      </TableCell>
-                      <TableCell align="right" sx={{ p: 1, borderBottom: "none" }} >
-                        <Button variant="contained" fullWidth color="primary" onClick={handleSubmit}>
+                          </Button>
+                        </TableCell>
+                        <TableCell align="right" sx={{ p: 1, borderBottom: "none" }} >
+                          <Button variant="contained" fullWidth color="primary" onClick={handleSubmit}>
                                                         Update
-                        </Button>
-                      </TableCell>
-                    </TableRow>
-                  </TableBody>
-                </Table>
-              </TableContainer>
-              <ThermostatRemote />
-            </Stack>
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+                <ThermostatRemote />
+              </Stack>
+            </Grid>
+            <Grid item xs={3} sx={{ mb: 3, mt: 2 }}>
+              <Slider
+                aria-label="Percent Open"
+                orientation="vertical"
+                value={sliderVal}
+                onChange={handleChange}
+                valueLabelDisplay="off"
+                marks={marks}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={3} sx={{ mb: 3, mt: 2 }}>
-            <Slider
-              aria-label="Percent Open"
-              orientation="vertical"
-              value={sliderVal}
-              onChange={handleChange}
-              valueLabelDisplay="off"
-              marks={marks}
-            />
-          </Grid>
-        </Grid>
-      </Box>
-    </Paper>
+
+        </Box>
+      </Paper>
+      <CreateButton/>
+    </Box>
   );
 }
 
