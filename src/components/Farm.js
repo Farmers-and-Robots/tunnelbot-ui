@@ -20,7 +20,6 @@ import { auth } from "../firebase";
 import {Outlet, useNavigate} from "react-router-dom";
 import FaRCopyright from "./FaRCopyright"
 import {farTheme} from "./farTheme";
-import TunnelSelector from "./TunnelSelector";
 
 const drawerWidth = 240;
 
@@ -167,7 +166,6 @@ function TunnelbotContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={6} lg={4}>
-                <TunnelSelector/>
                 <Outlet/>
               </Grid>
             </Grid>
