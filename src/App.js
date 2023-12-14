@@ -1,10 +1,10 @@
 import * as React from "react";
-import Tunnelbot from "./components/Tunnelbot";
+import Farm from "./components/Farm";
 import { BrowserRouter as Router } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import PageNotFound from "./components/PageNotFound"
-import Farm from "./components/Farm"
+import Home from "./components/Home"
 import Cameras from "./components/Cameras"
 import Weather from "./components/Weather"
 import Heating from "./components/Heating"
@@ -20,11 +20,11 @@ function App() {
       <div>
         <section>
           <Routes>
-            <Route path="/" element={<Tunnelbot/>}></Route>
+            <Route path="/" element={<Farm/>}></Route>
             <Route path="/signup" element={<SignUp/>}></Route>
             <Route path="/signin" element={<SignIn/>}></Route>
-            <Route path="/tunnelbot" element={<Tunnelbot/>}>
-              <Route path="farm" element={<Farm/>}></Route>
+            <Route path="/farm" element={<Farm/>}>
+              <Route index="home" element={<Home/>}></Route>
               <Route path="curtains" element={<Curtains/>}></Route>
               <Route path="heating" element={<Heating/>}></Route>
               <Route path="irrigation" element={<Irrigation/>}></Route>

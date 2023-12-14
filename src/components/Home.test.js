@@ -2,13 +2,13 @@ import React from "react"
 import {render, screen} from "@testing-library/react"
 import "@testing-library/jest-dom"
 import {BrowserRouter as Router} from "react-router-dom";
-import Farm from "./Farm";
+import Home from "./Home";
 
 test("loads component", async () => {
   // ARRANGE
   render(
     <Router>
-      <Farm url="/tunnelbot/farm"/>
+      <Home url="/farm/home"/>
     </Router>)
 
   // ASSERT

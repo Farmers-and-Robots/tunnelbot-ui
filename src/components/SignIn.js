@@ -30,7 +30,7 @@ export default function SignIn() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/tunnelbot")
+        navigate("/farm")
         console.log(user);
       })
       .catch((error) => {

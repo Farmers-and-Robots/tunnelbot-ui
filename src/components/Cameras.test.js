@@ -8,7 +8,7 @@ test("loads component", async () => {
   // ARRANGE
   render(
     <Router>
-      <Cameras url="/tunnelbot/cameras" />
+      <Cameras url="/farm/cameras" />
     </Router>)
 
   // ASSERT

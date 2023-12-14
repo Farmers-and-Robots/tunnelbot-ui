@@ -8,7 +8,7 @@ test("loads component", async () => {
   // ARRANGE
   render(
     <Router>
-      <Operations url="/tunnelbot/operations"/>
+      <Operations url="/farm/operations"/>
     </Router>)
 
   // ASSERT

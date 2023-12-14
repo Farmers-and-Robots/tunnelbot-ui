@@ -8,7 +8,7 @@ test("loads component", async () => {
   // ARRANGE
   render(
     <Router>
-      <Weather url="/tunnelbot/weatherqq"/>
+      <Weather url="/farm/weather"/>
     </Router>)
 
   // ASSERT
