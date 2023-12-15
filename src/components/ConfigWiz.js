@@ -9,18 +9,16 @@ import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import TextField from "@mui/material/TextField";
 import { FormControl, FormLabel } from "@mui/material";
-import MuiButton from "@mui/material/Button"
-import { styled } from "@mui/material/styles"
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const FarmButtonStyle = styled(MuiButton)(() => ({
+const farmButtonStyle = {
   mt: 7,
   mb: 7
-}));
+}
 
 export default function ConfigWiz({wizTitle}) {
 
@@ -36,9 +34,9 @@ export default function ConfigWiz({wizTitle}) {
 
   return (
     <React.Fragment>
-      <FarmButtonStyle variant="contained" onClick={handleClickOpen}>
+      <Button variant="contained" xs={farmButtonStyle} onClick={handleClickOpen}>
         {wizTitle}
-      </FarmButtonStyle>
+      </Button>
       <Dialog
         fullScreen
         open={open}
