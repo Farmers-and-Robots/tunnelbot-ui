@@ -9,6 +9,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import TextField from "@mui/material/TextField";
 import { FormControl, FormLabel } from "@mui/material";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -18,6 +20,11 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const farmButtonStyle = {
   mt: 2,
   mb: 2
+}
+
+const formTextStyle = {
+  mb: 2,
+  maxWidth: 500
 }
 
 export default function ConfigWiz({wizTitle}) {
@@ -60,9 +67,10 @@ export default function ConfigWiz({wizTitle}) {
         </AppBar>
         <FormControl sx={{m: 2}}>
           <FormLabel>Farm Name</FormLabel>
-          <TextField sx={{mb: 2}}></TextField>
+          <TextField sx={formTextStyle}></TextField>
           <FormLabel>Address</FormLabel>
-          <TextField ></TextField>
+          <TextField sx={formTextStyle}></TextField>
+          <FormControlLabel control={<Checkbox />} label="Make farm discoverable"></FormControlLabel>
         </FormControl>
       </Dialog>
     </React.Fragment>
