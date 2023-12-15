@@ -3,12 +3,7 @@ import * as React from "react";
 import CreateButton from "./CreateButton";
 import Box from "@mui/material/Box";
 import TunnelSelector from "./TunnelSelector";
-import Button from "@mui/material/Button"
-
-const farmButtonStyle = {
-  mt: 2,
-  mb: 2
-}
+import ConfigWiz from "./ConfigWiz";
 
 function fetchFarmData() {
   let farms = []
@@ -21,9 +16,9 @@ function fetchFarmData() {
         component="h1"
       >
         No farms found.<br/>
-        <Button sx={farmButtonStyle} variant="contained">Create a farm</Button><br/>
+        <ConfigWiz wizTitle={"Create a Farm"}/><br/>
         or<br/>
-        <Button sx={farmButtonStyle} variant="contained">Request access to a farm</Button>
+        <ConfigWiz wizTitle={"Request Access to a Farm"}/>
       </Typography>
     ) } else {
     return (
