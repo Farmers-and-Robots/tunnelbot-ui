@@ -71,6 +71,7 @@ export default function ConfigWiz({wizTitle}) {
           <FormLabel>Address</FormLabel>
           <TextField sx={formTextStyle}></TextField>
           <FormControlLabel control={<Checkbox />} label="Make farm discoverable"></FormControlLabel>
+          <Button variant="contained">Submit</Button>
         </FormControl>
       </Dialog>
     </React.Fragment>
