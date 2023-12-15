@@ -16,8 +16,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const farmButtonStyle = {
-  mt: 7,
-  mb: 7
+  mt: 2,
+  mb: 2
 }
 
 export default function ConfigWiz({wizTitle}) {
@@ -34,7 +34,7 @@ export default function ConfigWiz({wizTitle}) {
 
   return (
     <React.Fragment>
-      <Button variant="contained" xs={farmButtonStyle} onClick={handleClickOpen}>
+      <Button variant="contained" sx={farmButtonStyle} onClick={handleClickOpen}>
         {wizTitle}
       </Button>
       <Dialog
@@ -56,16 +56,13 @@ export default function ConfigWiz({wizTitle}) {
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
               {wizTitle}
             </Typography>
-            <Button color="inherit" onClick={handleClose}>
-              save
-            </Button>
           </Toolbar>
         </AppBar>
-        <FormControl>
+        <FormControl sx={{m: 2}}>
           <FormLabel>Farm Name</FormLabel>
-          <TextField xs={{mr: 5, ml: 5}}></TextField>
+          <TextField sx={{mb: 2}}></TextField>
           <FormLabel>Address</FormLabel>
-          <TextField xs={{mr: 5, ml: 5}}></TextField>
+          <TextField ></TextField>
         </FormControl>
       </Dialog>
     </React.Fragment>
