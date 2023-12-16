@@ -1,8 +1,8 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import CreateButton from "./CreateButton";
 import TunnelSelector from "./TunnelSelector";
 import Box from "@mui/material/Box";
+import {FabConfigWiz} from "./ConfigWiz";
 
 export default function Heating() {
   return (
@@ -11,7 +11,7 @@ export default function Heating() {
       <Typography component="h1" variant="h5">
         Heating
       </Typography>
-      <CreateButton/>
+      <FabConfigWiz wizTitle={"Add Heating"} action={"addHeating"}/>
     </Box>
   )
 }

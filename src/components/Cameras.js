@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import TunnelSelector from "./TunnelSelector";
 import Box from "@mui/material/Box";
-import CreateButton from "./CreateButton";
+import {FabConfigWiz} from "./ConfigWiz";
 
 export default function Cameras() {
   return (
@@ -11,7 +11,7 @@ export default function Cameras() {
       <Typography component="h1" variant="h5">
         Cameras
       </Typography>
-      <CreateButton/>
+      <FabConfigWiz wizTitle={"Add Camera"} action={"addCamera"}/>
     </Box>
   )
 }

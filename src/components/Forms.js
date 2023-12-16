@@ -5,6 +5,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import * as React from "react";
 import Box from "@mui/material/Box";
+import TunnelSelector from "./TunnelSelector";
 
 const formTextStyle = {
   mb: 2,
@@ -59,12 +60,27 @@ function requestFarmAccess() {
 
 }
 
+function addLight(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector />
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
 export default function GetForm({formKind}) {
   switch(formKind) {
   case "createFarm":
     return createFarm()
   case "requestFarmAccess":
     return requestFarmAccess()
+  case "addLight":
+    return addLight()
   default:
     return null
   }

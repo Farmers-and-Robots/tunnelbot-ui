@@ -9,11 +9,18 @@ import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import GetForm from "./Forms"
 import Box from "@mui/material/Box";
-import CreateButton from "./CreateButton";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
+
+const fabStyle = {
+  position: "absolute",
+  bottom: 16,
+  right: 16,
+};
 
 function FabConfigWiz({wizTitle, action}) {
   const [open, setOpen] = React.useState(false);
@@ -28,7 +35,9 @@ function FabConfigWiz({wizTitle, action}) {
 
   return (
     <React.Fragment>
-      <CreateButton onClick={handleClickOpen} />
+      <Fab color="primary" aria-label="add" sx={fabStyle} onClick={handleClickOpen} >
+        <AddIcon />
+      </Fab>
       <Dialog
         fullScreen
         open={open}

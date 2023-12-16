@@ -13,7 +13,7 @@ import Paper from "@mui/material/Paper";
 import { db } from "../firebase"
 import { onValue, ref } from "firebase/database"
 import TunnelSelector from "./TunnelSelector";
-import CreateButton from "./CreateButton";
+import {FabConfigWiz} from "./ConfigWiz";
 
 
 const marker = String.fromCodePoint(9668)
@@ -196,7 +196,7 @@ function CurtainRemoteContent({curtainName}) {
 
         </Box>
       </Paper>
-      <CreateButton/>
+      <FabConfigWiz wizTitle={"Add Curtain"} action={"Send"}/>
     </Box>
   );
 }
