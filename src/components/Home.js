@@ -16,9 +16,13 @@ function fetchFarmData() {
         component="h1"
       >
         No farms found.<br/>
-        <ConfigWiz wizTitle={"Create a Farm"}/><br/>
+        <ConfigWiz
+          wizTitle={"Create a Farm"}
+          action={"createFarm"}/><br/>
         or<br/>
-        <ConfigWiz wizTitle={"Request Access to a Farm"}/>
+        <ConfigWiz
+          wizTitle={"Request Access to a Farm"}
+          action={"requestFarmAccess"}/>
       </Typography>
     ) } else {
     return (

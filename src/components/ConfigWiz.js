@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
 import GetForm from "./Forms"
+import Box from "@mui/material/Box";
+
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -19,7 +21,7 @@ const farmButtonStyle = {
   mb: 2
 }
 
-export default function ConfigWiz({wizTitle}) {
+export default function ConfigWiz({wizTitle, action}) {
 
   const [open, setOpen] = React.useState(false);
 
@@ -57,7 +59,9 @@ export default function ConfigWiz({wizTitle}) {
             </Typography>
           </Toolbar>
         </AppBar>
-        <GetForm formKind={"createFarm"} />
+        <Box sx={{m:2}}>
+          <GetForm formKind={action} />
+        </Box>
       </Dialog>
     </React.Fragment>
   );
