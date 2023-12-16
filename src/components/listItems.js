@@ -19,7 +19,7 @@ export const mainListItems = (
       <ListItemIcon>
         <TunnelbotFarmIcon/>
       </ListItemIcon>
-      <ListItemText primary="/farm/home"/>
+      <ListItemText primary="Farm"/>
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/curtains"}>
       <ListItemIcon>
