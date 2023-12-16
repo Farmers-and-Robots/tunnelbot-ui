@@ -7,10 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import CloseIcon from "@mui/icons-material/Close";
 import Slide from "@mui/material/Slide";
-import TextField from "@mui/material/TextField";
-import { FormControl, FormLabel } from "@mui/material";
-import Checkbox from "@mui/material/Checkbox";
-import FormControlLabel from "@mui/material/FormControlLabel";
+import GetForm from "./Forms"
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -20,11 +17,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const farmButtonStyle = {
   mt: 2,
   mb: 2
-}
-
-const formTextStyle = {
-  mb: 2,
-  maxWidth: 500
 }
 
 export default function ConfigWiz({wizTitle}) {
@@ -65,14 +57,7 @@ export default function ConfigWiz({wizTitle}) {
             </Typography>
           </Toolbar>
         </AppBar>
-        <FormControl sx={{m: 2}}>
-          <FormLabel>Farm Name</FormLabel>
-          <TextField sx={formTextStyle}></TextField>
-          <FormLabel>Address</FormLabel>
-          <TextField sx={formTextStyle}></TextField>
-          <FormControlLabel control={<Checkbox />} label="Make farm discoverable"></FormControlLabel>
-          <Button variant="contained">Submit</Button>
-        </FormControl>
+        <GetForm formKind={"createFarm"} />
       </Dialog>
     </React.Fragment>
   );
