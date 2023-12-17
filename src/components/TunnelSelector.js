@@ -5,7 +5,6 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import Box from "@mui/material/Box"
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -49,7 +48,7 @@ export default function TunnelSelector(props) {
   };
   if (multipleChoice) {
     return (
-      <Box sx={{mb: 1, width: "100%"}}>
+      <FormControl sx={{mb: 1, width: "100%"}}>
         <InputLabel id="tunnel-selector-label">Tunnels</InputLabel>
         <Select
           labelId="tunnel-selector-label"
@@ -70,33 +69,31 @@ export default function TunnelSelector(props) {
             </MenuItem>
           ))}
         </Select>
-      </Box>
+      </FormControl>
     );
   } else {
     return (
-      <div>
-        <FormControl sx={{mb: 1, width: "100%"}}>
-          <InputLabel id="tunnel-selector-label">Tunnels</InputLabel>
-          <Select
-            labelId="tunnel-selector-label"
-            id="tunnel-selector"
-            value={tunnelName}
-            onChange={handleChange}
-            input={<FilledInput label="Tunnels"/>}
-            MenuProps={MenuProps}
-          >
-            {names.map((name) => (
-              <MenuItem
-                key={name}
-                value={name}
-                style={getStyles(name, tunnelName, theme)}
-              >
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
+      <FormControl variant="standard" sx={{mb: 1, width: "100%"}}>
+        <InputLabel id="tunnel-selector-label">Tunnel</InputLabel>
+        <Select
+          labelId="tunnel-selector-label"
+          id="tunnel-selector"
+          value={tunnelName}
+          onChange={handleChange}
+          width={"100%"}
+          MenuProps={MenuProps}
+        >
+          {names.map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, tunnelName, theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     )
    
   }
