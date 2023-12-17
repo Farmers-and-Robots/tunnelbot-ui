@@ -18,6 +18,7 @@ function CancelAnd({action}) {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-between",
+        mt: 2
       }}>
       <Button variant="outlined">Cancel</Button>
       <Button variant="contained">{action}</Button>
@@ -132,7 +133,6 @@ function addWeatherStation(){
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector mt={2} multipleChoice={false}/>
       <CancelAnd action={"Add"}/>
     </FormControl>
   )
@@ -146,6 +146,16 @@ export default function GetForm({formKind}) {
     return requestFarmAccess()
   case "addLight":
     return addLight()
+  case "addHeater":
+    return addHeater()
+  case "addIrrigation":
+    return addIrrigation()
+  case "addCurtain":
+    return addCurtain()
+  case "addCamera":
+    return addCamera()
+  case "addWeatherStation":
+    return addWeatherStation()
   default:
     return null
   }
