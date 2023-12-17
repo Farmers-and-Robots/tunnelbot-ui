@@ -13,7 +13,7 @@ import Paper from "@mui/material/Paper";
 import { db } from "../firebase"
 import { onValue, ref } from "firebase/database"
 import TunnelSelector from "./TunnelSelector";
-import CreateButton from "./CreateButton";
+import {FabConfigWiz} from "./ConfigWiz";
 
 
 const marker = String.fromCodePoint(9668)
@@ -53,8 +53,6 @@ function ThermostatRemote() {
     </Box>
   )
 }
-
-
 
 function CurtainRemoteContent({curtainName}) {
 //  const curtainNames = ["Right Curtain", "Left Curtain"];
@@ -133,7 +131,7 @@ function CurtainRemoteContent({curtainName}) {
   }
   return (
     <Box>
-      <TunnelSelector/>
+      <TunnelSelector multipleChoice={true}/>
       <Paper
         sx={{
           pt: 0,
@@ -196,7 +194,7 @@ function CurtainRemoteContent({curtainName}) {
 
         </Box>
       </Paper>
-      <CreateButton/>
+      <FabConfigWiz wizTitle={"Add Curtain"} action={"addCurtain"}/>
     </Box>
   );
 }

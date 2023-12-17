@@ -5,6 +5,7 @@ import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import * as React from "react";
 import Box from "@mui/material/Box";
+import TunnelSelector from "./TunnelSelector";
 
 const formTextStyle = {
   mb: 2,
@@ -17,6 +18,7 @@ function CancelAnd({action}) {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-between",
+        mt: 2
       }}>
       <Button variant="outlined">Cancel</Button>
       <Button variant="contained">{action}</Button>
@@ -59,12 +61,101 @@ function requestFarmAccess() {
 
 }
 
+function addLight(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addCamera(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addHeater(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addIrrigation(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addCurtain(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addWeatherStation(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
 export default function GetForm({formKind}) {
   switch(formKind) {
   case "createFarm":
     return createFarm()
   case "requestFarmAccess":
     return requestFarmAccess()
+  case "addLight":
+    return addLight()
+  case "addHeater":
+    return addHeater()
+  case "addIrrigation":
+    return addIrrigation()
+  case "addCurtain":
+    return addCurtain()
+  case "addCamera":
+    return addCamera()
+  case "addWeatherStation":
+    return addWeatherStation()
   default:
     return null
   }

@@ -1,9 +1,8 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import CreateButton from "./CreateButton";
 import Box from "@mui/material/Box";
 import TunnelSelector from "./TunnelSelector";
-import ConfigWiz from "./ConfigWiz";
+import {FarmConfigWiz} from "./ConfigWiz";
 
 function fetchFarmData() {
   let farms = []
@@ -16,11 +15,11 @@ function fetchFarmData() {
         component="h1"
       >
         No farms found.<br/>
-        <ConfigWiz
+        <FarmConfigWiz
           wizTitle={"Create a Farm"}
           action={"createFarm"}/><br/>
         or<br/>
-        <ConfigWiz
+        <FarmConfigWiz
           wizTitle={"Request Access to a Farm"}
           action={"requestFarmAccess"}/>
       </Typography>
@@ -36,9 +35,8 @@ export default function Home() {
   
   return (
     <Box>
-      <TunnelSelector/>
+      <TunnelSelector multipleChoice={true}/>
       {farmData}
-      < CreateButton />
     </Box>
   )
 }

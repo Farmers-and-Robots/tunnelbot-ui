@@ -1,7 +1,6 @@
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 import Box from "@mui/material/Box"
-import CreateButton from "./CreateButton";
 
 export default function Profile() {
   return (
@@ -9,7 +8,6 @@ export default function Profile() {
       <Typography component="h1" variant="h5">
         Profile
       </Typography>
-      <CreateButton/>
     </Box>
   )
 }
