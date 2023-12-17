@@ -67,7 +67,72 @@ function addLight(){
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector multipleChoice={false}/>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addCamera(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addHeater(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addIrrigation(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addCurtain(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addWeatherStation(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
       <CancelAnd action={"Add"}/>
     </FormControl>
   )

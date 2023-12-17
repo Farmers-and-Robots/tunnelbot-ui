@@ -194,7 +194,7 @@ function CurtainRemoteContent({curtainName}) {
 
         </Box>
       </Paper>
-      <FabConfigWiz wizTitle={"Add Curtain"} action={"Send"}/>
+      <FabConfigWiz wizTitle={"Add Curtain"} action={"addCurtain"}/>
     </Box>
   );
 }

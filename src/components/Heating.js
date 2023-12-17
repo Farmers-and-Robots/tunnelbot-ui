@@ -11,7 +11,7 @@ export default function Heating() {
       <Typography component="h1" variant="h5">
         Heating
       </Typography>
-      <FabConfigWiz wizTitle={"Add Heating"} action={"addHeating"}/>
+      <FabConfigWiz wizTitle={"Add Heating"} action={"addHeater"}/>
     </Box>
   )
 }
