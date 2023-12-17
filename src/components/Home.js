@@ -2,7 +2,7 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TunnelSelector from "./TunnelSelector";
-import {FabConfigWiz, FarmConfigWiz} from "./ConfigWiz";
+import {FarmConfigWiz} from "./ConfigWiz";
 
 function fetchFarmData() {
   let farms = []
@@ -35,9 +35,8 @@ export default function Home() {
   
   return (
     <Box>
-      <TunnelSelector/>
+      <TunnelSelector multipleChoice={true}/>
       {farmData}
-      < FabConfigWiz wizTitle={"Add Tunnel"} action={"addTunnel"}/>
     </Box>
   )
 }

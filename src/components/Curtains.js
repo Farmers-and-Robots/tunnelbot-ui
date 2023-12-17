@@ -54,8 +54,6 @@ function ThermostatRemote() {
   )
 }
 
-
-
 function CurtainRemoteContent({curtainName}) {
 //  const curtainNames = ["Right Curtain", "Left Curtain"];
 //  const curtains = curtainNames.map((curtainName, i) => <Curtain curtainName={curtainName} key={i}/>)
@@ -133,7 +131,7 @@ function CurtainRemoteContent({curtainName}) {
   }
   return (
     <Box>
-      <TunnelSelector/>
+      <TunnelSelector multipleChoice={true}/>
       <Paper
         sx={{
           pt: 0,

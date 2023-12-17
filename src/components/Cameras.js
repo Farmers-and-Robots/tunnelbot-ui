@@ -7,7 +7,7 @@ import {FabConfigWiz} from "./ConfigWiz";
 export default function Cameras() {
   return (
     <Box>
-      <TunnelSelector/>
+      <TunnelSelector multipleChoice={true}/>
       <Typography component="h1" variant="h5">
         Cameras
       </Typography>

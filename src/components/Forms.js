@@ -67,7 +67,7 @@ function addLight(){
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector />
+      <TunnelSelector multipleChoice={false}/>
       <CancelAnd action={"Add"}/>
     </FormControl>
   )
