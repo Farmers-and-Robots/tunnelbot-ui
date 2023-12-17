@@ -1,4 +1,6 @@
-# Farm UI
+# Tunnelbot UI
+![build and deploy]
+(https://github.com/Farmers-and-Robots/tunnelbot-ui/actions/workflows/firebase-hosting-merge.yml/badge.svg)
 
 This is a repository for the frontend and UI for tunnelbot, a Farmers and Robots Open Source project to support small farmers with advanced tunnel automation.
 The application is built in [React](https://react.dev/) with [MUI](https://mui.com/).
