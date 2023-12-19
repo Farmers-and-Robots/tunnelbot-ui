@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import PageNotFound from "./components/PageNotFound"
-import Home from "./components/Home"
+import Events from "./components/Events"
 import Cameras from "./components/Cameras"
 import Weather from "./components/Weather"
 import Heating from "./components/Heating"
@@ -24,7 +24,7 @@ function App() {
             <Route path="/signup" element={<SignUp/>}></Route>
             <Route path="/signin" element={<SignIn/>}></Route>
             <Route path="/farm" element={<Farm/>}>
-              <Route index="home" element={<Home/>}></Route>
+              <Route index="events" element={<Events/>}></Route>
               <Route path="curtains" element={<Curtains/>}></Route>
               <Route path="heating" element={<Heating/>}></Route>
               <Route path="irrigation" element={<Irrigation/>}></Route>

@@ -15,7 +15,7 @@ import {TunnelbotCurtainIcon,
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton component={Link} to={"/farm"}>
+    <ListItemButton component={Link} to={"/farm/events"}>
       <ListItemIcon>
         <TunnelbotFarmIcon/>
       </ListItemIcon>
