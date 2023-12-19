@@ -1,17 +1,16 @@
-import * as React from "react";
+import AddIcon from "@mui/icons-material/Add";
+import CloseIcon from "@mui/icons-material/Close";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import CloseIcon from "@mui/icons-material/Close";
-import Slide from "@mui/material/Slide";
-import GetForm from "./Forms"
-import Box from "@mui/material/Box";
 import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
-
+import IconButton from "@mui/material/IconButton";
+import Slide from "@mui/material/Slide";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+import GetForm from "./Forms";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -23,7 +22,7 @@ const fabStyle = {
   right: 16,
 };
 
-function FabConfigWiz({wizTitle, action}) {
+function FabConfigWiz({ wizTitle, action }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -36,7 +35,12 @@ function FabConfigWiz({wizTitle, action}) {
 
   return (
     <React.Fragment>
-      <Fab color="primary" aria-label="add" sx={fabStyle} onClick={handleClickOpen} >
+      <Fab
+        color="primary"
+        aria-label="add"
+        sx={fabStyle}
+        onClick={handleClickOpen}
+      >
         <AddIcon />
       </Fab>
       <Dialog
@@ -60,7 +64,7 @@ function FabConfigWiz({wizTitle, action}) {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Box sx={{m:2}}>
+        <Box sx={{ m: 2 }}>
           <GetForm formKind={action} />
         </Box>
       </Dialog>
@@ -70,11 +74,10 @@ function FabConfigWiz({wizTitle, action}) {
 
 const FarmButtonStyle = {
   mt: 2,
-  mb: 2
-}
+  mb: 2,
+};
 
-function FarmConfigWiz({wizTitle, action}) {
-
+function FarmConfigWiz({ wizTitle, action }) {
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -87,7 +90,11 @@ function FarmConfigWiz({wizTitle, action}) {
 
   return (
     <React.Fragment>
-      <Button variant="contained" sx={FarmButtonStyle} onClick={handleClickOpen}>
+      <Button
+        variant="contained"
+        sx={FarmButtonStyle}
+        onClick={handleClickOpen}
+      >
         {wizTitle}
       </Button>
       <Dialog
@@ -111,7 +118,7 @@ function FarmConfigWiz({wizTitle, action}) {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Box sx={{m:2}}>
+        <Box sx={{ m: 2 }}>
           <GetForm formKind={action} />
         </Box>
       </Dialog>
@@ -119,8 +126,4 @@ function FarmConfigWiz({wizTitle, action}) {
   );
 }
 
-export {
-  FarmConfigWiz,
-  FabConfigWiz,
-  FarmButtonStyle
-}
+export { FarmConfigWiz, FabConfigWiz, FarmButtonStyle };

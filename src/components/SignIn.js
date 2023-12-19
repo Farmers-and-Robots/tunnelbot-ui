@@ -1,25 +1,24 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
 import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
 import { ThemeProvider } from "@mui/material/styles";
-import {  signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import * as React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import FaRCopyright from "./FaRCopyright"
-import {farTheme} from "./farTheme";
+import { auth } from "../firebase";
+import FaRCopyright from "./FaRCopyright";
+import { farTheme } from "./farTheme";
 
 export default function SignIn() {
-
   const navigate = useNavigate();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -30,13 +29,13 @@ export default function SignIn() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/farm")
+        navigate("/farm");
         console.log(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
+        console.log(errorCode, errorMessage);
       });
   };
 
@@ -56,9 +55,14 @@ export default function SignIn() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-                        Sign in
+            Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
             <TextField
               margin="normal"
               required
@@ -67,7 +71,7 @@ export default function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
-              onChange={(e)=>setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -78,7 +82,7 @@ export default function SignIn() {
               type="password"
               id="password"
               autoComplete="current-password"
-              onChange={(e)=>setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <TextField
               margin="normal"
@@ -98,18 +102,16 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-                            Sign In
+              Sign In
             </Button>
             <Grid container>
               <Grid item xs>
                 <Link href="#" variant="body2">
-                                    Forgot password?
+                  Forgot password?
                 </Link>
               </Grid>
               <Grid item>
-                <NavLink to="/signup">
-                                    No account? Sign Up
-                </NavLink>
+                <NavLink to="/signup">No account? Sign Up</NavLink>
               </Grid>
             </Grid>
           </Box>
