@@ -67,7 +67,7 @@ function FabConfigWiz({wizTitle, action}) {
   );
 }
 
-const farmButtonStyle = {
+const FarmButtonStyle = {
   mt: 2,
   mb: 2
 }
@@ -86,7 +86,7 @@ function FarmConfigWiz({wizTitle, action}) {
 
   return (
     <React.Fragment>
-      <Button variant="contained" sx={farmButtonStyle} onClick={handleClickOpen}>
+      <Button variant="contained" sx={FarmButtonStyle} onClick={handleClickOpen}>
         {wizTitle}
       </Button>
       <Dialog
@@ -120,5 +120,6 @@ function FarmConfigWiz({wizTitle, action}) {
 
 export {
   FarmConfigWiz,
-  FabConfigWiz
+  FabConfigWiz,
+  FarmButtonStyle
 }
