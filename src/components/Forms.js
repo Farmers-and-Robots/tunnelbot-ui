@@ -72,7 +72,6 @@ function addTunnel() {
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector mt={2} multipleChoice={false} />
       <CancelAnd action={"Add"} />
     </FormControl>
   );
