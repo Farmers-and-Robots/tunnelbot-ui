@@ -61,7 +61,20 @@ function requestFarmAccess() {
 
 }
 
-function addLight(){
+function addTunnel(){
+  return (
+    <FormControl sx={ formStyle }>
+      <FormLabel>Name</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <FormLabel>Description</FormLabel>
+      <TextField sx={formTextStyle}></TextField>
+      <TunnelSelector mt={2} multipleChoice={false}/>
+      <CancelAnd action={"Add"}/>
+    </FormControl>
+  )
+}
+
+function addDevice(){
   return (
     <FormControl sx={ formStyle }>
       <FormLabel>Name</FormLabel>
@@ -144,8 +157,10 @@ export default function GetForm({formKind}) {
     return createFarm()
   case "requestFarmAccess":
     return requestFarmAccess()
-  case "addLight":
-    return addLight()
+  case "addTunnel":
+    return addTunnel()
+  case "addDevice":
+    return addDevice()
   case "addHeater":
     return addHeater()
   case "addIrrigation":

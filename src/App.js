@@ -13,6 +13,7 @@ import Irrigation from "./components/Irrigation"
 import Curtains from "./components/Curtains"
 import People from "./components/People"
 import { Routes, Route } from "react-router-dom";
+import Tunnels from "./components/Tunnels";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="/signin" element={<SignIn/>}></Route>
             <Route path="/farm" element={<Farm/>}>
               <Route index="events" element={<Events/>}></Route>
+              <Route path="tunnels" element={<Tunnels/>}></Route>
               <Route path="curtains" element={<Curtains/>}></Route>
               <Route path="heating" element={<Heating/>}></Route>
               <Route path="irrigation" element={<Irrigation/>}></Route>
