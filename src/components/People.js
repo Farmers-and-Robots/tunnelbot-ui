@@ -19,11 +19,11 @@ const handleSignOut = () => {
   });
 }
 
-export default function Profile() {
+export default function People() {
   return (
     <Box>
       <Typography component="h1" variant="h5">
-        Profile
+        People
       </Typography>
       <Button variant="contained" sx={FarmButtonStyle} onClick={handleSignOut}>Sign Out</Button>
     </Box>

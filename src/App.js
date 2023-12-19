@@ -11,7 +11,7 @@ import Heating from "./components/Heating"
 import Devices from "./components/Devices"
 import Irrigation from "./components/Irrigation"
 import Curtains from "./components/Curtains"
-import Profile from "./components/Profile"
+import People from "./components/People"
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
               <Route path="camera" element={<Cameras/>}></Route>
               <Route path="devices" element={<Devices/>}></Route>
               <Route path="weather" element={<Weather/>}></Route>
-              <Route path="profile" element={<Profile/>}></Route>
+              <Route path="people" element={<People/>}></Route>
             </Route>
             <Route path="*" element={<PageNotFound/>}></Route>
           </Routes>

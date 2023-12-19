@@ -57,11 +57,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Weather"/>
     </ListItemButton>
-    <ListItemButton component={Link} to={"/farm/profile"}>
+    <ListItemButton component={Link} to={"/farm/people"}>
       <ListItemIcon>
         <TunnelbotProfileIcon/>
       </ListItemIcon>
-      <ListItemText primary="Profile"/>
+      <ListItemText primary="People"/>
     </ListItemButton>
   </React.Fragment>
 )
