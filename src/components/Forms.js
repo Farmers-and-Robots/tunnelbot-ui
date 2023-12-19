@@ -1,178 +1,181 @@
-import {FormControl, FormLabel} from "@mui/material";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Button from "@mui/material/Button";
-import * as React from "react";
+import { FormControl, FormLabel } from "@mui/material";
 import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import TextField from "@mui/material/TextField";
+import * as React from "react";
 import TunnelSelector from "./TunnelSelector";
 
 const formTextStyle = {
   mb: 2,
-}
+};
 
-function CancelAnd({action}) {
+function CancelAnd({ action }) {
   return (
     <Box
       sx={{
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-between",
-        mt: 2
-      }}>
+        mt: 2,
+      }}
+    >
       <Button variant="outlined">Cancel</Button>
       <Button variant="contained">{action}</Button>
     </Box>
-  )
-
+  );
 }
 
 const formStyle = {
   width: "100%",
-  maxWidth: 700
-}
+  maxWidth: 700,
+};
 
 function createFarm() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Farm Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Address</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <FormControlLabel control={<Checkbox />} label="Make farm discoverable" sx={{ mb: 2}}></FormControlLabel>
-      <CancelAnd action={"Create"}/>
+      <FormControlLabel
+        control={<Checkbox />}
+        label="Make farm discoverable"
+        sx={{ mb: 2 }}
+      ></FormControlLabel>
+      <CancelAnd action={"Create"} />
     </FormControl>
-  )
+  );
 }
 
 function requestFarmAccess() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Farm Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Address</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      or<br/>
+      or
+      <br />
       <FormLabel>Farm Owner</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <CancelAnd action={"Send"}/>
+      <CancelAnd action={"Send"} />
     </FormControl>
-  )
-
+  );
 }
 
-function addTunnel(){
+function addTunnel() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector mt={2} multipleChoice={false}/>
-      <CancelAnd action={"Add"}/>
+      <TunnelSelector mt={2} multipleChoice={false} />
+      <CancelAnd action={"Add"} />
     </FormControl>
-  )
+  );
 }
 
-function addDevice(){
+function addDevice() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector mt={2} multipleChoice={false}/>
-      <CancelAnd action={"Add"}/>
+      <TunnelSelector mt={2} multipleChoice={false} />
+      <CancelAnd action={"Add"} />
     </FormControl>
-  )
+  );
 }
 
-function addCamera(){
+function addCamera() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector mt={2} multipleChoice={false}/>
-      <CancelAnd action={"Add"}/>
+      <TunnelSelector mt={2} multipleChoice={false} />
+      <CancelAnd action={"Add"} />
     </FormControl>
-  )
+  );
 }
 
-function addHeater(){
+function addHeater() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector mt={2} multipleChoice={false}/>
-      <CancelAnd action={"Add"}/>
+      <TunnelSelector mt={2} multipleChoice={false} />
+      <CancelAnd action={"Add"} />
     </FormControl>
-  )
+  );
 }
 
-function addIrrigation(){
+function addIrrigation() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector mt={2} multipleChoice={false}/>
-      <CancelAnd action={"Add"}/>
+      <TunnelSelector mt={2} multipleChoice={false} />
+      <CancelAnd action={"Add"} />
     </FormControl>
-  )
+  );
 }
 
-function addCurtain(){
+function addCurtain() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <TunnelSelector mt={2} multipleChoice={false}/>
-      <CancelAnd action={"Add"}/>
+      <TunnelSelector mt={2} multipleChoice={false} />
+      <CancelAnd action={"Add"} />
     </FormControl>
-  )
+  );
 }
 
-function addWeatherStation(){
+function addWeatherStation() {
   return (
-    <FormControl sx={ formStyle }>
+    <FormControl sx={formStyle}>
       <FormLabel>Name</FormLabel>
       <TextField sx={formTextStyle}></TextField>
       <FormLabel>Description</FormLabel>
       <TextField sx={formTextStyle}></TextField>
-      <CancelAnd action={"Add"}/>
+      <CancelAnd action={"Add"} />
     </FormControl>
-  )
+  );
 }
 
-export default function GetForm({formKind}) {
-  switch(formKind) {
+export default function GetForm({ formKind }) {
+  switch (formKind) {
   case "createFarm":
-    return createFarm()
+    return createFarm();
   case "requestFarmAccess":
-    return requestFarmAccess()
+    return requestFarmAccess();
   case "addTunnel":
-    return addTunnel()
+    return addTunnel();
   case "addDevice":
-    return addDevice()
+    return addDevice();
   case "addHeater":
-    return addHeater()
+    return addHeater();
   case "addIrrigation":
-    return addIrrigation()
+    return addIrrigation();
   case "addCurtain":
-    return addCurtain()
+    return addCurtain();
   case "addCamera":
-    return addCamera()
+    return addCamera();
   case "addWeatherStation":
-    return addWeatherStation()
+    return addWeatherStation();
   default:
-    return null
+    return null;
   }
-  
 }

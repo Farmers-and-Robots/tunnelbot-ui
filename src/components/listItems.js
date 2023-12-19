@@ -1,74 +1,74 @@
-import * as React from "react";
-import { Link } from "react-router-dom"
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import {TunnelbotCurtainIcon,
-  TunnelbotWeatherIcon,
+import * as React from "react";
+import { Link } from "react-router-dom";
+import {
   TunnelbotCameraIcon,
+  TunnelbotCurtainIcon,
   TunnelbotDevicesIcon,
+  TunnelbotFarmIcon,
   TunnelbotHeatingIcon,
   TunnelbotIrrigationIcon,
-  TunnelbotFarmIcon,
   TunnelbotProfileIcon,
+  TunnelbotWeatherIcon,
 } from "./TunnelbotIcons";
 
 export const mainListItems = (
   <React.Fragment>
     <ListItemButton component={Link} to={"/farm"}>
       <ListItemIcon>
-        <TunnelbotFarmIcon/>
+        <TunnelbotFarmIcon />
       </ListItemIcon>
-      <ListItemText primary="Farm"/>
+      <ListItemText primary="Farm" />
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/tunnels"}>
       <ListItemIcon>
-        <TunnelbotDevicesIcon/>
+        <TunnelbotDevicesIcon />
       </ListItemIcon>
-      <ListItemText primary="Tunnels"/>
+      <ListItemText primary="Tunnels" />
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/curtains"}>
       <ListItemIcon>
-        <TunnelbotCurtainIcon/>
+        <TunnelbotCurtainIcon />
       </ListItemIcon>
-      <ListItemText primary="Curtains"/>
+      <ListItemText primary="Curtains" />
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/heating"}>
       <ListItemIcon>
-        <TunnelbotHeatingIcon/>
+        <TunnelbotHeatingIcon />
       </ListItemIcon>
-      <ListItemText primary="Heating"/>
+      <ListItemText primary="Heating" />
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/irrigation"}>
       <ListItemIcon>
-        <TunnelbotIrrigationIcon/>
+        <TunnelbotIrrigationIcon />
       </ListItemIcon>
-      <ListItemText primary="Irrigation"/>
+      <ListItemText primary="Irrigation" />
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/camera"}>
       <ListItemIcon>
-        <TunnelbotCameraIcon/>
+        <TunnelbotCameraIcon />
       </ListItemIcon>
-      <ListItemText primary="Camera"/>
+      <ListItemText primary="Camera" />
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/devices"}>
       <ListItemIcon>
-        <TunnelbotDevicesIcon/>
+        <TunnelbotDevicesIcon />
       </ListItemIcon>
-      <ListItemText primary="Devices"/>
+      <ListItemText primary="Devices" />
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/weather"}>
       <ListItemIcon>
-        <TunnelbotWeatherIcon/>
+        <TunnelbotWeatherIcon />
       </ListItemIcon>
-      <ListItemText primary="Weather"/>
+      <ListItemText primary="Weather" />
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/people"}>
       <ListItemIcon>
-        <TunnelbotProfileIcon/>
+        <TunnelbotProfileIcon />
       </ListItemIcon>
-      <ListItemText primary="People"/>
+      <ListItemText primary="People" />
     </ListItemButton>
   </React.Fragment>
-)
-
+);

@@ -1,28 +1,28 @@
-import * as React from "react";
-import { styled, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import MuiDrawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import  {mainListItems} from "./listItems";
+import MenuIcon from "@mui/icons-material/Menu";
+import MuiAppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import Divider from "@mui/material/Divider";
+import MuiDrawer from "@mui/material/Drawer";
+import Grid from "@mui/material/Grid";
+import IconButton from "@mui/material/IconButton";
+import List from "@mui/material/List";
+import { styled, ThemeProvider } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import { onAuthStateChanged } from "firebase/auth";
+import * as React from "react";
+import { Outlet, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
-import {Outlet, useNavigate} from "react-router-dom";
-import FaRCopyright from "./FaRCopyright"
-import {farTheme} from "./farTheme";
+import FaRCopyright from "./FaRCopyright";
+import { farTheme } from "./farTheme";
+import { mainListItems } from "./listItems";
 
 const drawerWidth = 240;
 
-const AppBar = styled(MuiAppBar )(({ theme, open }) => ({
+const AppBar = styled(MuiAppBar)(({ theme, open }) => ({
   zIndex: theme.zIndex.drawer + 1,
   transition: theme.transitions.create(["width", "margin"], {
     easing: theme.transitions.easing.sharp,
@@ -38,51 +38,47 @@ const AppBar = styled(MuiAppBar )(({ theme, open }) => ({
   }),
 }));
 
-const Drawer = styled(MuiDrawer)(
-  ({ theme, open }) => ({
-    "& .MuiDrawer-paper": {
-      position: "absolute",
-      flexShrink: 0,
-      whiteSpace: "nowrap",
-      width: drawerWidth,
+const Drawer = styled(MuiDrawer)(({ theme, open }) => ({
+  "& .MuiDrawer-paper": {
+    position: "absolute",
+    flexShrink: 0,
+    whiteSpace: "nowrap",
+    width: drawerWidth,
+    transition: theme.transitions.create("width", {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+    boxSizing: "border-box",
+    ...(!open && {
+      overflowX: "hidden",
       transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
+        duration: theme.transitions.duration.leavingScreen,
       }),
-      boxSizing: "border-box",
-      ...(!open && {
-        overflowX: "hidden",
-        transition: theme.transitions.create("width", {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-        }),
-        width: theme.spacing(7),
-        [theme.breakpoints.up("sm")]: {
-          width: theme.spacing(9),
-        },
-      }),
-    },
-  }),
-);
+      width: theme.spacing(7),
+      [theme.breakpoints.up("sm")]: {
+        width: theme.spacing(9),
+      },
+    }),
+  },
+}));
 
 function TunnelbotContent() {
-  const navigate = useNavigate()
-  React.useEffect(()=>{
+  const navigate = useNavigate();
+  React.useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
-        console.log("uid", uid)
+        console.log("uid", uid);
       } else {
         // User is signed out
-        navigate("/signin")
-        console.log("user is signed out")
+        navigate("/signin");
+        console.log("user is signed out");
       }
     });
-
-  }, [])
-
+  }, []);
 
   const [open, setOpen] = React.useState(false);
   const toggleDrawer = () => {
@@ -122,8 +118,7 @@ function TunnelbotContent() {
             </Typography>
           </Toolbar>
         </AppBar>
-        <Drawer variant="permanent" open={open}
-          PaperProps={{ elevation: 0}}>
+        <Drawer variant="permanent" open={open} PaperProps={{ elevation: 0 }}>
           <Toolbar
             sx={{
               display: "flex",
@@ -137,9 +132,7 @@ function TunnelbotContent() {
             </IconButton>
           </Toolbar>
           <Divider />
-          <List component="nav">
-            {mainListItems}
-          </List>
+          <List component="nav">{mainListItems}</List>
         </Drawer>
         <Box
           component="main"
@@ -147,7 +140,7 @@ function TunnelbotContent() {
             flexGrow: 1,
             height: "100vh",
             overflow: "auto",
-            ml: 7
+            ml: 7,
           }}
         >
           <Toolbar />
@@ -155,12 +148,11 @@ function TunnelbotContent() {
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
               <Grid item xs={12} md={6} lg={4}>
-                <Outlet/>
+                <Outlet />
               </Grid>
             </Grid>
             <FaRCopyright sx={{ pt: 4 }} />
           </Container>
-
         </Box>
       </Box>
     </ThemeProvider>

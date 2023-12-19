@@ -1,10 +1,10 @@
-import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 import FilledInput from "@mui/material/FilledInput";
+import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { useTheme } from "@mui/material/styles";
+import * as React from "react";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -17,11 +17,7 @@ const MenuProps = {
   },
 };
 
-const names = [
-  "tunnel-1",
-  "tunnel-2",
-  "tunnel-3",
-];
+const names = ["tunnel-1", "tunnel-2", "tunnel-3"];
 
 function getStyles(name, tunnelName, theme) {
   return {
@@ -48,7 +44,7 @@ export default function TunnelSelector(props) {
   };
   if (multipleChoice) {
     return (
-      <FormControl sx={{mb: 1, width: "100%"}}>
+      <FormControl sx={{ mb: 1, width: "100%" }}>
         <InputLabel id="tunnel-selector-label">Tunnels</InputLabel>
         <Select
           labelId="tunnel-selector-label"
@@ -56,7 +52,7 @@ export default function TunnelSelector(props) {
           multiple
           value={tunnelName}
           onChange={handleChange}
-          input={<FilledInput label="Tunnels"/>}
+          input={<FilledInput label="Tunnels" />}
           MenuProps={MenuProps}
         >
           {names.map((name) => (
@@ -73,7 +69,7 @@ export default function TunnelSelector(props) {
     );
   } else {
     return (
-      <FormControl variant="standard" sx={{mb: 1, width: "100%"}}>
+      <FormControl variant="standard" sx={{ mb: 1, width: "100%" }}>
         <InputLabel id="tunnel-selector-label">Tunnel</InputLabel>
         <Select
           labelId="tunnel-selector-label"
@@ -94,7 +90,6 @@ export default function TunnelSelector(props) {
           ))}
         </Select>
       </FormControl>
-    )
-   
+    );
   }
 }

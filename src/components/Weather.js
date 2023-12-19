@@ -1,7 +1,7 @@
+import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import Box from "@mui/material/Box";
-import {FabConfigWiz} from "./ConfigWiz";
+import { FabConfigWiz } from "./ConfigWiz";
 
 export default function Weather() {
   return (
@@ -9,7 +9,10 @@ export default function Weather() {
       <Typography component="h1" variant="h5">
         Weather
       </Typography>
-      <FabConfigWiz wizTitle={"Add Weather Station"} action={"addWeatherStation"}/>
+      <FabConfigWiz
+        wizTitle={"Add Weather Station"}
+        action={"addWeatherStation"}
+      />
     </Box>
-  )
+  );
 }

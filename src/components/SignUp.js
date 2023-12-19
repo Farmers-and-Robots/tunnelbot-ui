@@ -1,22 +1,21 @@
-import * as React from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
 import Container from "@mui/material/Container";
+import CssBaseline from "@mui/material/CssBaseline";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Grid from "@mui/material/Grid";
 import { ThemeProvider } from "@mui/material/styles";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import * as React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import {  createUserWithEmailAndPassword  } from "firebase/auth";
 import { auth } from "../firebase";
-import FaRCopyright from "./FaRCopyright"
-import {farTheme} from "./farTheme";
-
+import FaRCopyright from "./FaRCopyright";
+import { farTheme } from "./farTheme";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -32,7 +31,7 @@ export default function SignUp() {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        navigate("/login")
+        navigate("/login");
         // ...
       })
       .catch((error) => {
@@ -59,9 +58,14 @@ export default function SignUp() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-                        Sign up
+            Sign up
           </Typography>
-          <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+          <Box
+            component="form"
+            noValidate
+            onSubmit={handleSubmit}
+            sx={{ mt: 3 }}
+          >
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
@@ -91,7 +95,7 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
-                  onChange={(e)=> setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -103,12 +107,14 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
-                  onChange={(e)=> setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </Grid>
               <Grid item xs={12}>
                 <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
+                  control={
+                    <Checkbox value="allowExtraEmails" color="primary" />
+                  }
                   label="I want to join the Robot Ready Farmers Registry to be involved in testing and focus groups for agricultural technologies."
                 />
               </Grid>
@@ -120,12 +126,12 @@ export default function SignUp() {
               sx={{ mt: 3, mb: 2 }}
               onClick={handleSubmit}
             >
-                            Sign Up
+              Sign Up
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <NavLink href="#" variant="body2" to="/signin">
-                                    Already have an account? Sign in
+                  Already have an account? Sign in
                 </NavLink>
               </Grid>
             </Grid>
