@@ -2,15 +2,15 @@ import React from "react"
 import {render, screen} from "@testing-library/react"
 import "@testing-library/jest-dom"
 import {BrowserRouter as Router} from "react-router-dom";
-import Home from "./Home";
+import Devices from "./Devices";
 
 test("loads component", async () => {
   // ARRANGE
   render(
     <Router>
-      <Home url="/farm/home"/>
+      <Devices url="/farm/devices"/>
     </Router>)
 
   // ASSERT
-  expect(screen.getByRole("heading")).toHaveTextContent("Farm")
+  expect(screen.getByRole("heading")).toHaveTextContent("Devices")
 })

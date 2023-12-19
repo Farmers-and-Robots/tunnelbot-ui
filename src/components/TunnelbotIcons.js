@@ -50,7 +50,7 @@ function TunnelbotHeatingIcon() {
     alt="heating"/>)
 }
 
-function TunnelbotLightsIcon() {
+function TunnelbotDevicesIcon() {
   return (<img
     src={TunnelbotLightsSVG}
     style={{height: 24, width: 24}}
@@ -69,7 +69,7 @@ export {
   TunnelbotCurtainIcon,
   TunnelbotWeatherIcon,
   TunnelbotCameraIcon,
-  TunnelbotLightsIcon,
+  TunnelbotDevicesIcon,
   TunnelbotHeatingIcon,
   TunnelbotIrrigationIcon,
   TunnelbotProfileIcon

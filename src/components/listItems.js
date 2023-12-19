@@ -6,7 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import {TunnelbotCurtainIcon,
   TunnelbotWeatherIcon,
   TunnelbotCameraIcon,
-  TunnelbotLightsIcon,
+  TunnelbotDevicesIcon,
   TunnelbotHeatingIcon,
   TunnelbotIrrigationIcon,
   TunnelbotFarmIcon,
@@ -20,6 +20,12 @@ export const mainListItems = (
         <TunnelbotFarmIcon/>
       </ListItemIcon>
       <ListItemText primary="Farm"/>
+    </ListItemButton>
+    <ListItemButton component={Link} to={"/farm/tunnels"}>
+      <ListItemIcon>
+        <TunnelbotDevicesIcon/>
+      </ListItemIcon>
+      <ListItemText primary="Tunnels"/>
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/curtains"}>
       <ListItemIcon>
@@ -45,11 +51,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Camera"/>
     </ListItemButton>
-    <ListItemButton component={Link} to={"/farm/lights"}>
+    <ListItemButton component={Link} to={"/farm/devices"}>
       <ListItemIcon>
-        <TunnelbotLightsIcon/>
+        <TunnelbotDevicesIcon/>
       </ListItemIcon>
-      <ListItemText primary="Lights"/>
+      <ListItemText primary="Devices"/>
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/weather"}>
       <ListItemIcon>
@@ -57,11 +63,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Weather"/>
     </ListItemButton>
-    <ListItemButton component={Link} to={"/farm/profile"}>
+    <ListItemButton component={Link} to={"/farm/people"}>
       <ListItemIcon>
         <TunnelbotProfileIcon/>
       </ListItemIcon>
-      <ListItemText primary="Profile"/>
+      <ListItemText primary="People"/>
     </ListItemButton>
   </React.Fragment>
 )

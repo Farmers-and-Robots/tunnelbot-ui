@@ -25,12 +25,12 @@ function fetchFarmData() {
       </Typography>
     ) } else {
     return (
-      <Typography>HI IM A FARM</Typography>
+      <Typography>EVENTS</Typography>
     )
   }
 }
 
-export default function Home() {
+export default function Events() {
   let farmData = fetchFarmData()
   
   return (

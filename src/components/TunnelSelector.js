@@ -48,56 +48,52 @@ export default function TunnelSelector(props) {
   };
   if (multipleChoice) {
     return (
-      <div>
-        <FormControl sx={{mb: 1, width: "100%"}}>
-          <InputLabel id="tunnel-selector-label">Tunnels</InputLabel>
-          <Select
-            labelId="tunnel-selector-label"
-            id="tunnel-selector"
-            multiple
-            value={tunnelName}
-            onChange={handleChange}
-            input={<FilledInput label="Tunnels"/>}
-            MenuProps={MenuProps}
-          >
-            {names.map((name) => (
-              <MenuItem
-                key={name}
-                value={name}
-                style={getStyles(name, tunnelName, theme)}
-              >
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
+      <FormControl sx={{mb: 1, width: "100%"}}>
+        <InputLabel id="tunnel-selector-label">Tunnels</InputLabel>
+        <Select
+          labelId="tunnel-selector-label"
+          id="tunnel-selector"
+          multiple
+          value={tunnelName}
+          onChange={handleChange}
+          input={<FilledInput label="Tunnels"/>}
+          MenuProps={MenuProps}
+        >
+          {names.map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, tunnelName, theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     );
   } else {
     return (
-      <div>
-        <FormControl sx={{mb: 1, width: "100%"}}>
-          <InputLabel id="tunnel-selector-label">Tunnels</InputLabel>
-          <Select
-            labelId="tunnel-selector-label"
-            id="tunnel-selector"
-            value={tunnelName}
-            onChange={handleChange}
-            input={<FilledInput label="Tunnels"/>}
-            MenuProps={MenuProps}
-          >
-            {names.map((name) => (
-              <MenuItem
-                key={name}
-                value={name}
-                style={getStyles(name, tunnelName, theme)}
-              >
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </FormControl>
-      </div>
+      <FormControl variant="standard" sx={{mb: 1, width: "100%"}}>
+        <InputLabel id="tunnel-selector-label">Tunnel</InputLabel>
+        <Select
+          labelId="tunnel-selector-label"
+          id="tunnel-selector"
+          value={tunnelName}
+          onChange={handleChange}
+          width={"100%"}
+          MenuProps={MenuProps}
+        >
+          {names.map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              style={getStyles(name, tunnelName, theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
     )
    
   }

@@ -4,14 +4,14 @@ import TunnelSelector from "./TunnelSelector";
 import Box from "@mui/material/Box";
 import {FabConfigWiz} from "./ConfigWiz";
 
-export default function Lights() {
+export default function Tunnels() {
   return (
     <Box>
       <TunnelSelector multipleChoice={true}/>
       <Typography component="h1" variant="h5">
-        Lights
+        Tunnels
       </Typography>
-      <FabConfigWiz wizTitle={"Add Lights"} action={"addLight"}/>
+      <FabConfigWiz wizTitle={"Add Tunnel"} action={"addTunnel"}/>
     </Box>
   )
 }
