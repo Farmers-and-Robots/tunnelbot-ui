@@ -6,7 +6,7 @@ import ListItemText from "@mui/material/ListItemText";
 import {TunnelbotCurtainIcon,
   TunnelbotWeatherIcon,
   TunnelbotCameraIcon,
-  TunnelbotLightsIcon,
+  TunnelbotDevicesIcon,
   TunnelbotHeatingIcon,
   TunnelbotIrrigationIcon,
   TunnelbotFarmIcon,
@@ -45,11 +45,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Camera"/>
     </ListItemButton>
-    <ListItemButton component={Link} to={"/farm/lights"}>
+    <ListItemButton component={Link} to={"/farm/devices"}>
       <ListItemIcon>
-        <TunnelbotLightsIcon/>
+        <TunnelbotDevicesIcon/>
       </ListItemIcon>
-      <ListItemText primary="Lights"/>
+      <ListItemText primary="Devices"/>
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/weather"}>
       <ListItemIcon>

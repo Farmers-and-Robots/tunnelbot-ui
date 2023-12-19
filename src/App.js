@@ -8,7 +8,7 @@ import Home from "./components/Home"
 import Cameras from "./components/Cameras"
 import Weather from "./components/Weather"
 import Heating from "./components/Heating"
-import Lights from "./components/Lights"
+import Devices from "./components/Devices"
 import Irrigation from "./components/Irrigation"
 import Curtains from "./components/Curtains"
 import Profile from "./components/Profile"
@@ -29,7 +29,7 @@ function App() {
               <Route path="heating" element={<Heating/>}></Route>
               <Route path="irrigation" element={<Irrigation/>}></Route>
               <Route path="camera" element={<Cameras/>}></Route>
-              <Route path="lights" element={<Lights/>}></Route>
+              <Route path="devices" element={<Devices/>}></Route>
               <Route path="weather" element={<Weather/>}></Route>
               <Route path="profile" element={<Profile/>}></Route>
             </Route>
