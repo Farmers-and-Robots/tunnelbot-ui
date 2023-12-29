@@ -1,5 +1,3 @@
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
@@ -16,7 +14,8 @@ import * as React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import FaRCopyright from "./FaRCopyright";
-import { farTheme } from "./farTheme";
+import { signTheme } from "./farTheme";
+import { FaRLogoPNG } from "./TunnelbotIcons";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -40,22 +39,20 @@ export default function SignIn() {
   };
 
   return (
-    <ThemeProvider theme={farTheme}>
+    <ThemeProvider theme={signTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 4,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign in
+          <FaRLogoPNG />
+          <Typography component="h1" variant="h5" sx={{ mt: 2 }}>
+            Tunnelbot
           </Typography>
           <Box
             component="form"
@@ -65,6 +62,7 @@ export default function SignIn() {
           >
             <TextField
               margin="normal"
+              variant="filled"
               required
               fullWidth
               id="email"
@@ -75,6 +73,7 @@ export default function SignIn() {
             />
             <TextField
               margin="normal"
+              variant="filled"
               required
               fullWidth
               name="password"
@@ -86,6 +85,7 @@ export default function SignIn() {
             />
             <TextField
               margin="normal"
+              variant="filled"
               required
               fullWidth
               name="farm"
@@ -101,6 +101,7 @@ export default function SignIn() {
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
+              color="secondary"
             >
               Sign In
             </Button>

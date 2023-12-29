@@ -1,5 +1,3 @@
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
@@ -15,7 +13,8 @@ import * as React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import FaRCopyright from "./FaRCopyright";
-import { farTheme } from "./farTheme";
+import { signTheme } from "./farTheme";
+import { FaRLogoPNG } from "./TunnelbotIcons";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -43,22 +42,20 @@ export default function SignUp() {
   };
 
   return (
-    <ThemeProvider theme={farTheme}>
+    <ThemeProvider theme={signTheme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            marginTop: 4,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Sign up
+          <FaRLogoPNG />
+          <Typography component="h1" variant="h5" sx={{ mt: 2 }}>
+            Tunnelbot
           </Typography>
           <Box
             component="form"
@@ -69,6 +66,7 @@ export default function SignUp() {
             <Grid container spacing={2}>
               <Grid item xs={12} sm={6}>
                 <TextField
+                  variant="filled"
                   autoComplete="given-name"
                   name="firstName"
                   required
@@ -80,6 +78,7 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   required
+                  variant="filled"
                   fullWidth
                   id="lastName"
                   label="Last Name"
@@ -90,6 +89,7 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   required
+                  variant="filled"
                   fullWidth
                   id="email"
                   label="Email Address"
@@ -101,6 +101,7 @@ export default function SignUp() {
               <Grid item xs={12}>
                 <TextField
                   required
+                  variant="filled"
                   fullWidth
                   name="password"
                   label="Password"
@@ -115,7 +116,7 @@ export default function SignUp() {
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
-                  label="I want to join the Robot Ready Farmers Registry to be involved in testing and focus groups for agricultural technologies."
+                  label="I want to be involved in testing and focus groups for agricultural technologies."
                 />
               </Grid>
             </Grid>
@@ -125,6 +126,7 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               onClick={handleSubmit}
+              color="secondary"
             >
               Sign Up
             </Button>

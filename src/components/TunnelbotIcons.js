@@ -1,4 +1,5 @@
 import * as React from "react";
+import FaRLogo from "./icons/far-logo-2-color.png";
 import TunnelbotCameraSVG from "./icons/noun-camera-817253-2B1C1C.svg";
 import TunnelbotFarmSVG from "./icons/noun-farm-3686373-2B1C1C.svg";
 import TunnelbotHeatingSVG from "./icons/noun-heat-689784-2B1C1C.svg";
@@ -84,6 +85,16 @@ function TunnelbotProfileIcon() {
   );
 }
 
+function FaRLogoPNG() {
+  return (
+    <img
+      src={FaRLogo}
+      style={{ height: 60, width: 60 }}
+      alt="farmers and robots"
+    />
+  );
+}
+
 export {
   TunnelbotFarmIcon,
   TunnelbotCurtainIcon,
@@ -93,4 +104,5 @@ export {
   TunnelbotHeatingIcon,
   TunnelbotIrrigationIcon,
   TunnelbotProfileIcon,
+  FaRLogoPNG,
 };
