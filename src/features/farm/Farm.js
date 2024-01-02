@@ -15,10 +15,10 @@ import Typography from "@mui/material/Typography";
 import { onAuthStateChanged } from "firebase/auth";
 import * as React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
-import FaRCopyright from "./FaRCopyright";
-import { farTheme } from "./farTheme";
-import { mainListItems } from "./listItems";
+import FaRCopyright from "../../components/FaRCopyright";
+import { farTheme } from "../../components/farTheme";
+import { mainListItems } from "../../components/listItems";
+import { auth } from "../../firebase";
 
 const drawerWidth = 240;
 

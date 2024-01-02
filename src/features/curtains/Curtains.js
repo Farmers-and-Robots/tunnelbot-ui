@@ -11,9 +11,9 @@ import TableRow from "@mui/material/TableRow";
 import Typography from "@mui/material/Typography";
 import { onValue, ref } from "firebase/database";
 import * as React from "react";
-import { db } from "../firebase";
-import { FabConfigWiz } from "./ConfigWiz";
-import TunnelSelector from "./TunnelSelector";
+import { FabConfigWiz } from "../../components/ConfigWiz";
+import TunnelSelector from "../../components/TunnelSelector";
+import { db } from "../../firebase";
 
 const marker = String.fromCodePoint(9668);
 const marks = [

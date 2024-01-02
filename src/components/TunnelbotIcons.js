@@ -1,13 +1,13 @@
 import * as React from "react";
-import FaRLogo from "./icons/far-logo-2-color.png";
-import TunnelbotCameraSVG from "./icons/noun-camera-817253-2B1C1C.svg";
-import TunnelbotFarmSVG from "./icons/noun-farm-3686373-2B1C1C.svg";
-import TunnelbotHeatingSVG from "./icons/noun-heat-689784-2B1C1C.svg";
-import TunnelbotLightsSVG from "./icons/noun-light-bulb-1508212-2B1C1C.svg";
-import TunnelbotProfileSVG from "./icons/noun-profile-1385662-2B1C1C.svg";
-import TunnelbotIrrigationSVG from "./icons/noun-water-1201714-2B1C1C.svg";
-import TunnelbotWeatherSVG from "./icons/noun-weather-1518210-2B1C1C.svg";
-import TunnelbotCurtainSVG from "./icons/noun-wrapping-paper-28046-2B1C1C.svg";
+import FaRLogo from "../assets/far-logo-2-color.png";
+import TunnelbotCameraSVG from "../assets/noun-camera-817253-2B1C1C.svg";
+import TunnelbotFarmSVG from "../assets/noun-farm-3686373-2B1C1C.svg";
+import TunnelbotHeatingSVG from "../assets/noun-heat-689784-2B1C1C.svg";
+import TunnelbotLightsSVG from "../assets/noun-light-bulb-1508212-2B1C1C.svg";
+import TunnelbotProfileSVG from "../assets/noun-profile-1385662-2B1C1C.svg";
+import TunnelbotIrrigationSVG from "../assets/noun-water-1201714-2B1C1C.svg";
+import TunnelbotWeatherSVG from "../assets/noun-weather-1518210-2B1C1C.svg";
+import TunnelbotCurtainSVG from "../assets/noun-wrapping-paper-28046-2B1C1C.svg";
 
 function TunnelbotFarmIcon() {
   return (

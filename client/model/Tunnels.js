@@ -13,18 +13,18 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
-import {Tunnel} from './Tunnel';
+import {ApiClient} from "../ApiClient";
+import {Tunnel} from "./Tunnel";
 
 /**
- * The Tunnels model module.
+ * The tunnels model module.
  * @module model/Tunnels
  * @version 1
  */
 export class Tunnels extends Array {
   /**
-   * Constructs a new <code>Tunnels</code>.
-   * @alias module:model/Tunnels
+   * Constructs a new <code>tunnels</code>.
+   * @alias module:model/tunnels
    * @class
    * @extends Array
    */
@@ -33,16 +33,16 @@ export class Tunnels extends Array {
   }
 
   /**
-   * Constructs a <code>Tunnels</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>tunnels</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/Tunnels} obj Optional instance to populate.
-   * @return {module:model/Tunnels} The populated <code>Tunnels</code> instance.
+   * @return {module:model/Tunnels} The populated <code>tunnels</code> instance.
    */
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Tunnels();
-      ApiClient.constructFromObject(data, obj, 'Tunnel');
+      ApiClient.constructFromObject(data, obj, "Tunnel");
     }
     return obj;
   }

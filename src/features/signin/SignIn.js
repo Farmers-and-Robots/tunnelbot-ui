@@ -12,10 +12,10 @@ import Typography from "@mui/material/Typography";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import * as React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
-import FaRCopyright from "./FaRCopyright";
-import { signTheme } from "./farTheme";
-import { FaRLogoPNG } from "./TunnelbotIcons";
+import FaRCopyright from "../../components/FaRCopyright";
+import { signTheme } from "../../components/farTheme";
+import { FaRLogoPNG } from "../../components/TunnelbotIcons";
+import { auth } from "../../firebase";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -107,7 +107,7 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link href="src/features/signin/SignIn#" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>

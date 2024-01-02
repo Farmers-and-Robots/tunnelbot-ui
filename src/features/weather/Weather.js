@@ -1,15 +1,18 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import TunnelSelector from "./TunnelSelector";
+import { FabConfigWiz } from "../../components/ConfigWiz";
 
-export default function Operations() {
+export default function Weather() {
   return (
     <Box>
-      <TunnelSelector />
       <Typography component="h1" variant="h5">
-        Operations
+        Weather
       </Typography>
+      <FabConfigWiz
+        wizTitle={"Add weather Station"}
+        action={"addWeatherStation"}
+      />
     </Box>
   );
 }

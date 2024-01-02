@@ -1,17 +1,17 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { FabConfigWiz } from "./ConfigWiz";
-import TunnelSelector from "./TunnelSelector";
+import { FabConfigWiz } from "../../components/ConfigWiz";
+import TunnelSelector from "../../components/TunnelSelector";
 
-export default function Devices() {
+export default function Irrigation() {
   return (
     <Box>
       <TunnelSelector multipleChoice={true} />
       <Typography component="h1" variant="h5">
-        Devices
+        Irrigation
       </Typography>
-      <FabConfigWiz wizTitle={"Add Devices"} action={"addDevice"} />
+      <FabConfigWiz wizTitle={"Add irrigation"} action={"addIrrigation"} />
     </Box>
   );
 }

@@ -1,17 +1,17 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { FabConfigWiz } from "./ConfigWiz";
-import TunnelSelector from "./TunnelSelector";
+import { FabConfigWiz } from "../../components/ConfigWiz";
+import TunnelSelector from "../../components/TunnelSelector";
 
-export default function Irrigation() {
+export default function Heating() {
   return (
     <Box>
       <TunnelSelector multipleChoice={true} />
       <Typography component="h1" variant="h5">
-        Irrigation
+        Heating
       </Typography>
-      <FabConfigWiz wizTitle={"Add Irrigation"} action={"addIrrigation"} />
+      <FabConfigWiz wizTitle={"Add heating"} action={"addHeater"} />
     </Box>
   );
 }

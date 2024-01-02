@@ -4,8 +4,8 @@ import Typography from "@mui/material/Typography";
 import { signOut } from "firebase/auth";
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../firebase";
-import { FarmButtonStyle } from "./ConfigWiz";
+import { FarmButtonStyle } from "../../components/ConfigWiz";
+import { auth } from "../../firebase";
 
 const handleSignOut = () => {
   signOut(auth)

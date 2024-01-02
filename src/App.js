@@ -1,18 +1,18 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Cameras from "./components/Cameras";
-import Curtains from "./components/Curtains";
-import Devices from "./components/Devices";
-import Events from "./components/Events";
-import Farm from "./components/Farm";
-import Heating from "./components/Heating";
-import Irrigation from "./components/Irrigation";
 import PageNotFound from "./components/PageNotFound";
-import People from "./components/People";
-import SignIn from "./components/SignIn";
-import SignUp from "./components/SignUp";
-import Tunnels from "./components/Tunnels";
-import Weather from "./components/Weather";
+import Cameras from "./features/cameras/Cameras";
+import Curtains from "./features/curtains/Curtains";
+import Devices from "./features/devices/Devices";
+import Events from "./features/events/Events";
+import Farm from "./features/farm/Farm";
+import Heating from "./features/heating/Heating";
+import Irrigation from "./features/irrigation/Irrigation";
+import People from "./features/people/People";
+import SignIn from "./features/signin/SignIn";
+import SignUp from "./features/signup/SignUp";
+import Tunnels from "./features/tunnels/Tunnels";
+import Weather from "./features/weather/Weather";
 
 function App() {
   return (

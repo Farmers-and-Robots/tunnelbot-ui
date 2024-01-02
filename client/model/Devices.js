@@ -13,18 +13,18 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
-import {Device} from './Device';
+import {ApiClient} from "../ApiClient";
+import {Device} from "./Device";
 
 /**
- * The Devices model module.
+ * The devices model module.
  * @module model/Devices
  * @version 1
  */
 export class Devices extends Array {
   /**
-   * Constructs a new <code>Devices</code>.
-   * @alias module:model/Devices
+   * Constructs a new <code>devices</code>.
+   * @alias module:model/devices
    * @class
    * @extends Array
    */
@@ -33,16 +33,16 @@ export class Devices extends Array {
   }
 
   /**
-   * Constructs a <code>Devices</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>devices</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
    * @param {module:model/Devices} obj Optional instance to populate.
-   * @return {module:model/Devices} The populated <code>Devices</code> instance.
+   * @return {module:model/Devices} The populated <code>devices</code> instance.
    */
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Devices();
-      ApiClient.constructFromObject(data, obj, 'Device');
+      ApiClient.constructFromObject(data, obj, "Device");
     }
     return obj;
   }

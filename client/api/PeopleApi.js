@@ -14,115 +14,118 @@
  *
  */
 import {ApiClient} from "../ApiClient";
-import {Person} from '../model/Person';
+import {Person} from "../model/Person";
 
 /**
-* People service.
-* @module api/PeopleApi
-* @version 1
-*/
+ * people service.
+ * @module api/PeopleApi
+ * @version 1
+ */
 export class PeopleApi {
-
-    /**
-    * Constructs a new PeopleApi. 
-    * @alias module:api/PeopleApi
-    * @class
-    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
-    * default to {@link module:ApiClient#instanc
+  /**
+   * Constructs a new PeopleApi.
+   * @alias module:api/PeopleApi
+   * @class
+   * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+   * default to {@link module:ApiClient#instanc
     e} if unspecified.
-    */
-    constructor(apiClient) {
-        this.apiClient = apiClient || ApiClient.instance;
-    }
+   */
+  constructor(apiClient) {
+    this.apiClient = apiClient || ApiClient.instance;
+  }
 
-    /**
-     * Callback function to receive the result of the getPeople operation.
-     * @callback moduleapi/PeopleApi~getPeopleCallback
-     * @param {String} error Error message, if any.
-     * @param {Array.<module:model/Person>{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
+  /**
+   * Callback function to receive the result of the getPeople operation.
+   * @callback moduleapi/PeopleApi~getPeopleCallback
+   * @param {String} error Error message, if any.
+   * @param {Array.<module:model/Person>{ data The data returned by the service call.
+   * @param {String} response The complete HTTP response.
+   */
 
-    /**
-     * Return the people associated with a farm
-     * Return the people associated with a farm
-     * @param {module:api/PeopleApi~getPeopleCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    getPeople(callback) {
-      
-      let postBody = null;
+  /**
+   * Return the people associated with a farm
+   * Return the people associated with a farm
+   * @param {module:api/PeopleApi~getPeopleCallback} callback The callback function, accepting three arguments: error, data, response
+   * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+   */
+  getPeople(callback) {
+    let postBody = null;
 
-      let pathParams = {
-        
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
+    let pathParams = {};
+    let queryParams = {};
+    let headerParams = {};
+    let formParams = {};
 
-      let authNames = ['firebase'];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [Person];
+    let authNames = ["firebase"];
+    let contentTypes = [];
+    let accepts = ["application/json"];
+    let returnType = [Person];
 
-      return this.apiClient.callApi(
-        '/people/', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-    /**
-     * Callback function to receive the result of the getPersonById operation.
-     * @callback moduleapi/PeopleApi~getPersonByIdCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Person{ data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
+    return this.apiClient.callApi(
+      "/people/",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      formParams,
+      postBody,
+      authNames,
+      contentTypes,
+      accepts,
+      returnType,
+      callback,
+    );
+  }
 
-    /**
-     * Find person by id
-     * Returns a single person
-     * @param {Number} personId id of person to return
-     * @param {module:api/PeopleApi~getPersonByIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
-     */
-    getPersonById(personId, callback) {
-      
-      let postBody = null;
-      // verify the required parameter 'personId' is set
-      if (personId === undefined || personId === null) {
-        throw new Error("Missing the required parameter 'personId' when calling getPersonById");
-      }
+  /**
+   * Callback function to receive the result of the getPersonById operation.
+   * @callback moduleapi/PeopleApi~getPersonByIdCallback
+   * @param {String} error Error message, if any.
+   * @param {module:model/Person{ data The data returned by the service call.
+   * @param {String} response The complete HTTP response.
+   */
 
-      let pathParams = {
-        'personId': personId
-      };
-      let queryParams = {
-        
-      };
-      let headerParams = {
-        
-      };
-      let formParams = {
-        
-      };
-
-      let authNames = ['firebase'];
-      let contentTypes = [];
-      let accepts = ['application/json', 'application/xml'];
-      let returnType = Person;
-
-      return this.apiClient.callApi(
-        '/people/{personId}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
+  /**
+   * Find person by id
+   * Returns a single person
+   * @param {Number} personId id of person to return
+   * @param {module:api/PeopleApi~getPersonByIdCallback} callback The callback function, accepting three arguments: error, data, response
+   * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+   */
+  getPersonById(personId, callback) {
+    let postBody = null;
+    // verify the required parameter 'personId' is set
+    if (personId === undefined || personId === null) {
+      throw new Error(
+        "Missing the required parameter 'personId' when calling getPersonById",
       );
     }
 
+    let pathParams = {
+      personId: personId,
+    };
+    let queryParams = {};
+    let headerParams = {};
+    let formParams = {};
+
+    let authNames = ["firebase"];
+    let contentTypes = [];
+    let accepts = ["application/json", "application/xml"];
+    let returnType = Person;
+
+    return this.apiClient.callApi(
+      "/people/{personId}",
+      "GET",
+      pathParams,
+      queryParams,
+      headerParams,
+      formParams,
+      postBody,
+      authNames,
+      contentTypes,
+      accepts,
+      returnType,
+      callback,
+    );
+  }
 }

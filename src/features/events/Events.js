@@ -1,8 +1,8 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { FarmConfigWiz } from "./ConfigWiz";
-import TunnelSelector from "./TunnelSelector";
+import { FarmConfigWiz } from "../../components/ConfigWiz";
+import TunnelSelector from "../../components/TunnelSelector";
 
 function fetchFarmData() {
   let farms = [];
