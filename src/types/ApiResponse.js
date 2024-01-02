@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
+import { ApiClient } from "../api/ApiClient";
 
 /**
  * The ApiResponse model module.
@@ -26,8 +26,7 @@ export class ApiResponse {
    * @alias module:model/ApiResponse
    * @class
    */
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Constructs a <code>ApiResponse</code> from a plain JavaScript object, optionally creating a new instance.
@@ -39,12 +38,12 @@ export class ApiResponse {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new ApiResponse();
-      if (data.hasOwnProperty('code'))
-        obj.code = ApiClient.convertToType(data['code'], 'Number');
-      if (data.hasOwnProperty('type'))
-        obj.type = ApiClient.convertToType(data['type'], 'String');
-      if (data.hasOwnProperty('message'))
-        obj.message = ApiClient.convertToType(data['message'], 'String');
+      if (data.hasOwnProperty("code"))
+        obj.code = ApiClient.convertToType(data["code"], "Number");
+      if (data.hasOwnProperty("type"))
+        obj.type = ApiClient.convertToType(data["type"], "String");
+      if (data.hasOwnProperty("message"))
+        obj.message = ApiClient.convertToType(data["message"], "String");
     }
     return obj;
   }
@@ -64,4 +63,3 @@ ApiResponse.prototype.type = undefined;
  * @member {String} message
  */
 ApiResponse.prototype.message = undefined;
-

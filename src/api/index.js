@@ -13,23 +13,23 @@
  * Do not edit the class manually.
  *
  */
-import {DeviceApi} from "./api/DeviceApi";
-import {FarmApi} from "./api/FarmApi";
-import {PeopleApi} from "./api/PeopleApi";
-import {TunnelApi} from "./api/TunnelApi";
-import {ApiClient} from "./ApiClient";
-import {Address} from "./model/Address";
-import {ApiResponse} from "./model/ApiResponse";
-import {Device} from "./model/Device";
-import {DeviceCategory} from "./model/DeviceCategory";
-import {Devices} from "./model/Devices";
-import {Farm} from "./model/Farm";
-import {FarmAssociation} from "./model/FarmAssociation";
-import {Person} from "./model/Person";
-import {PersonAssociation} from "./model/PersonAssociation";
-import {Role} from "./model/Role";
-import {Tunnel} from "./model/Tunnel";
-import {Tunnels} from "./model/Tunnels";
+import { DeviceApi } from "../features/devices/api/DeviceApi";
+import { FarmApi } from "../features/farm/api/FarmApi";
+import { PeopleApi } from "../features/people/api/PeopleApi";
+import { TunnelApi } from "../features/tunnels/api/TunnelApi";
+import { ApiClient } from "./ApiClient";
+import { Address } from "../types/Address";
+import { ApiResponse } from "../types/ApiResponse";
+import { Device } from "../types/Device";
+import { DeviceCategory } from "../types/DeviceCategory";
+import { Devices } from "../types/Devices";
+import { Farm } from "../types/Farm";
+import { FarmAssociation } from "../types/FarmAssociation";
+import { Person } from "../types/Person";
+import { PersonAssociation } from "../types/PersonAssociation";
+import { Role } from "../types/Role";
+import { Tunnel } from "../types/Tunnel";
+import { Tunnels } from "../types/Tunnels";
 
 /**
  * This_is_the_API_specification_for_the_tunnelbot_backend_.<br>

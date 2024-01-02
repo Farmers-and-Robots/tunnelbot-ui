@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
+import { ApiClient } from "../api/ApiClient";
 
 /**
  * Enum class DeviceCategory.
@@ -66,11 +66,11 @@ const DeviceCategory = {
   /**
    * Returns a <code>DeviceCategory</code> enum value from a JavaScript object name.
    * @param {Object} data The plain JavaScript object containing the name of the enum value.
-  * @return {module:model/DeviceCategory} The enum <code>DeviceCategory</code> value.
+   * @return {module:model/DeviceCategory} The enum <code>DeviceCategory</code> value.
    */
-  constructFromObject: function(object) {
+  constructFromObject: function (object) {
     return object;
-  }
+  },
 };
 
-export {DeviceCategory};
+export { DeviceCategory };

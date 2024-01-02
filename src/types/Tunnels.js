@@ -13,8 +13,8 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from "../ApiClient";
-import {Tunnel} from "./Tunnel";
+import { ApiClient } from "../api/ApiClient";
+import { Tunnel } from "./Tunnel";
 
 /**
  * The tunnels model module.

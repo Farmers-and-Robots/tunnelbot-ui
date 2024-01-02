@@ -13,9 +13,9 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
-import {Address} from './Address';
-import {PersonAssociation} from './PersonAssociation';
+import { ApiClient } from "../api/ApiClient";
+import { Address } from "./Address";
+import { PersonAssociation } from "./PersonAssociation";
 
 /**
  * The Farm model module.
@@ -28,8 +28,7 @@ export class Farm {
    * @alias module:model/Farm
    * @class
    */
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Constructs a <code>Farm</code> from a plain JavaScript object, optionally creating a new instance.
@@ -41,20 +40,24 @@ export class Farm {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Farm();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('kind'))
-        obj.kind = ApiClient.convertToType(data['kind'], 'String');
-      if (data.hasOwnProperty('name'))
-        obj.name = ApiClient.convertToType(data['name'], 'String');
-      if (data.hasOwnProperty('createDate'))
-        obj.createDate = ApiClient.convertToType(data['createDate'], 'Date');
-      if (data.hasOwnProperty('address'))
-        obj.address = Address.constructFromObject(data['address']);
-      if (data.hasOwnProperty('owners'))
-        obj.owners = ApiClient.convertToType(data['owners'], [PersonAssociation]);
-      if (data.hasOwnProperty('people'))
-        obj.people = ApiClient.convertToType(data['people'], [PersonAssociation]);
+      if (data.hasOwnProperty("id"))
+        obj.id = ApiClient.convertToType(data["id"], "Number");
+      if (data.hasOwnProperty("kind"))
+        obj.kind = ApiClient.convertToType(data["kind"], "String");
+      if (data.hasOwnProperty("name"))
+        obj.name = ApiClient.convertToType(data["name"], "String");
+      if (data.hasOwnProperty("createDate"))
+        obj.createDate = ApiClient.convertToType(data["createDate"], "Date");
+      if (data.hasOwnProperty("address"))
+        obj.address = Address.constructFromObject(data["address"]);
+      if (data.hasOwnProperty("owners"))
+        obj.owners = ApiClient.convertToType(data["owners"], [
+          PersonAssociation,
+        ]);
+      if (data.hasOwnProperty("people"))
+        obj.people = ApiClient.convertToType(data["people"], [
+          PersonAssociation,
+        ]);
     }
     return obj;
   }
@@ -94,4 +97,3 @@ Farm.prototype.owners = undefined;
  * @member {Array.<module:model/PersonAssociation>} people
  */
 Farm.prototype.people = undefined;
-

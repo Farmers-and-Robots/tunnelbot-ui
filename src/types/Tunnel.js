@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
+import { ApiClient } from "../api/ApiClient";
 
 /**
  * The Tunnel model module.
@@ -25,7 +25,7 @@ export class Tunnel {
    * Constructs a new <code>Tunnel</code>.
    * @alias module:model/Tunnel
    * @class
-   * @param name {String} 
+   * @param name {String}
    */
   constructor(name) {
     this.name = name;
@@ -41,12 +41,12 @@ export class Tunnel {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Tunnel();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('kind'))
-        obj.kind = ApiClient.convertToType(data['kind'], 'String');
-      if (data.hasOwnProperty('name'))
-        obj.name = ApiClient.convertToType(data['name'], 'String');
+      if (data.hasOwnProperty("id"))
+        obj.id = ApiClient.convertToType(data["id"], "Number");
+      if (data.hasOwnProperty("kind"))
+        obj.kind = ApiClient.convertToType(data["kind"], "String");
+      if (data.hasOwnProperty("name"))
+        obj.name = ApiClient.convertToType(data["name"], "String");
     }
     return obj;
   }
@@ -66,4 +66,3 @@ Tunnel.prototype.kind = undefined;
  * @member {String} name
  */
 Tunnel.prototype.name = undefined;
-

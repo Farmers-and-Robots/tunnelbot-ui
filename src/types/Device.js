@@ -13,8 +13,8 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
-import {DeviceCategory} from './DeviceCategory';
+import { ApiClient } from "../api/ApiClient";
+import { DeviceCategory } from "./DeviceCategory";
 
 /**
  * The Device model module.
@@ -26,7 +26,7 @@ export class Device {
    * Constructs a new <code>Device</code>.
    * @alias module:model/Device
    * @class
-   * @param name {String} 
+   * @param name {String}
    */
   constructor(name) {
     this.name = name;
@@ -42,14 +42,14 @@ export class Device {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Device();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('kind'))
-        obj.kind = ApiClient.convertToType(data['kind'], 'String');
-      if (data.hasOwnProperty('name'))
-        obj.name = ApiClient.convertToType(data['name'], 'String');
-      if (data.hasOwnProperty('category'))
-        obj.category = DeviceCategory.constructFromObject(data['category']);
+      if (data.hasOwnProperty("id"))
+        obj.id = ApiClient.convertToType(data["id"], "Number");
+      if (data.hasOwnProperty("kind"))
+        obj.kind = ApiClient.convertToType(data["kind"], "String");
+      if (data.hasOwnProperty("name"))
+        obj.name = ApiClient.convertToType(data["name"], "String");
+      if (data.hasOwnProperty("category"))
+        obj.category = DeviceCategory.constructFromObject(data["category"]);
     }
     return obj;
   }
@@ -74,4 +74,3 @@ Device.prototype.name = undefined;
  * @member {module:model/DeviceCategory} category
  */
 Device.prototype.category = undefined;
-

@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
+import { ApiClient } from "../api/ApiClient";
 
 /**
  * The Address model module.
@@ -26,8 +26,7 @@ export class Address {
    * @alias module:model/Address
    * @class
    */
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Constructs a <code>Address</code> from a plain JavaScript object, optionally creating a new instance.
@@ -39,14 +38,14 @@ export class Address {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Address();
-      if (data.hasOwnProperty('street'))
-        obj.street = ApiClient.convertToType(data['street'], 'String');
-      if (data.hasOwnProperty('city'))
-        obj.city = ApiClient.convertToType(data['city'], 'String');
-      if (data.hasOwnProperty('state'))
-        obj.state = ApiClient.convertToType(data['state'], 'String');
-      if (data.hasOwnProperty('zip'))
-        obj.zip = ApiClient.convertToType(data['zip'], 'String');
+      if (data.hasOwnProperty("street"))
+        obj.street = ApiClient.convertToType(data["street"], "String");
+      if (data.hasOwnProperty("city"))
+        obj.city = ApiClient.convertToType(data["city"], "String");
+      if (data.hasOwnProperty("state"))
+        obj.state = ApiClient.convertToType(data["state"], "String");
+      if (data.hasOwnProperty("zip"))
+        obj.zip = ApiClient.convertToType(data["zip"], "String");
     }
     return obj;
   }
@@ -71,4 +70,3 @@ Address.prototype.state = undefined;
  * @member {String} zip
  */
 Address.prototype.zip = undefined;
-

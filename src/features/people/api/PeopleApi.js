@@ -13,8 +13,8 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from "../ApiClient";
-import {Person} from "../model/Person";
+import { ApiClient } from "../../../api/ApiClient";
+import { Person } from "../../../types/Person";
 
 /**
  * people service.
@@ -26,7 +26,7 @@ export class PeopleApi {
    * Constructs a new PeopleApi.
    * @alias module:api/PeopleApi
    * @class
-   * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+   * @param {module:ApiClient} [apiClient] Optional API api implementation to use,
    * default to {@link module:ApiClient#instanc
     e} if unspecified.
    */

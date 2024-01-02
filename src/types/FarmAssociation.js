@@ -13,8 +13,8 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
-import {Role} from './Role';
+import { ApiClient } from "../api/ApiClient";
+import { Role } from "./Role";
 
 /**
  * The FarmAssociation model module.
@@ -27,8 +27,7 @@ export class FarmAssociation {
    * @alias module:model/FarmAssociation
    * @class
    */
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Constructs a <code>FarmAssociation</code> from a plain JavaScript object, optionally creating a new instance.
@@ -40,12 +39,12 @@ export class FarmAssociation {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new FarmAssociation();
-      if (data.hasOwnProperty('farmId'))
-        obj.farmId = ApiClient.convertToType(data['farmId'], 'Number');
-      if (data.hasOwnProperty('farmName'))
-        obj.farmName = ApiClient.convertToType(data['farmName'], 'String');
-      if (data.hasOwnProperty('role'))
-        obj.role = Role.constructFromObject(data['role']);
+      if (data.hasOwnProperty("farmId"))
+        obj.farmId = ApiClient.convertToType(data["farmId"], "Number");
+      if (data.hasOwnProperty("farmName"))
+        obj.farmName = ApiClient.convertToType(data["farmName"], "String");
+      if (data.hasOwnProperty("role"))
+        obj.role = Role.constructFromObject(data["role"]);
     }
     return obj;
   }
@@ -65,4 +64,3 @@ FarmAssociation.prototype.farmName = undefined;
  * @member {module:model/Role} role
  */
 FarmAssociation.prototype.role = undefined;
-

@@ -13,8 +13,8 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
-import {FarmAssociation} from './FarmAssociation';
+import { ApiClient } from "../api/ApiClient";
+import { FarmAssociation } from "./FarmAssociation";
 
 /**
  * The Person model module.
@@ -27,8 +27,7 @@ export class Person {
    * @alias module:model/Person
    * @class
    */
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Constructs a <code>Person</code> from a plain JavaScript object, optionally creating a new instance.
@@ -40,22 +39,28 @@ export class Person {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new Person();
-      if (data.hasOwnProperty('id'))
-        obj.id = ApiClient.convertToType(data['id'], 'Number');
-      if (data.hasOwnProperty('kind'))
-        obj.kind = ApiClient.convertToType(data['kind'], 'String');
-      if (data.hasOwnProperty('displayName'))
-        obj.displayName = ApiClient.convertToType(data['displayName'], 'String');
-      if (data.hasOwnProperty('firstName'))
-        obj.firstName = ApiClient.convertToType(data['firstName'], 'String');
-      if (data.hasOwnProperty('lastName'))
-        obj.lastName = ApiClient.convertToType(data['lastName'], 'String');
-      if (data.hasOwnProperty('email'))
-        obj.email = ApiClient.convertToType(data['email'], 'String');
-      if (data.hasOwnProperty('phone'))
-        obj.phone = ApiClient.convertToType(data['phone'], 'String');
-      if (data.hasOwnProperty('farmAssociations'))
-        obj.farmAssociations = ApiClient.convertToType(data['farmAssociations'], [FarmAssociation]);
+      if (data.hasOwnProperty("id"))
+        obj.id = ApiClient.convertToType(data["id"], "Number");
+      if (data.hasOwnProperty("kind"))
+        obj.kind = ApiClient.convertToType(data["kind"], "String");
+      if (data.hasOwnProperty("displayName"))
+        obj.displayName = ApiClient.convertToType(
+          data["displayName"],
+          "String",
+        );
+      if (data.hasOwnProperty("firstName"))
+        obj.firstName = ApiClient.convertToType(data["firstName"], "String");
+      if (data.hasOwnProperty("lastName"))
+        obj.lastName = ApiClient.convertToType(data["lastName"], "String");
+      if (data.hasOwnProperty("email"))
+        obj.email = ApiClient.convertToType(data["email"], "String");
+      if (data.hasOwnProperty("phone"))
+        obj.phone = ApiClient.convertToType(data["phone"], "String");
+      if (data.hasOwnProperty("farmAssociations"))
+        obj.farmAssociations = ApiClient.convertToType(
+          data["farmAssociations"],
+          [FarmAssociation],
+        );
     }
     return obj;
   }
@@ -100,4 +105,3 @@ Person.prototype.phone = undefined;
  * @member {Array.<module:model/FarmAssociation>} farmAssociations
  */
 Person.prototype.farmAssociations = undefined;
-

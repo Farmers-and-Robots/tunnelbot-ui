@@ -13,8 +13,8 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
-import {Role} from './Role';
+import { ApiClient } from "../api/ApiClient";
+import { Role } from "./Role";
 
 /**
  * The PersonAssociation model module.
@@ -27,8 +27,7 @@ export class PersonAssociation {
    * @alias module:model/PersonAssociation
    * @class
    */
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Constructs a <code>PersonAssociation</code> from a plain JavaScript object, optionally creating a new instance.
@@ -40,14 +39,17 @@ export class PersonAssociation {
   static constructFromObject(data, obj) {
     if (data) {
       obj = obj || new PersonAssociation();
-      if (data.hasOwnProperty('personId'))
-        obj.personId = ApiClient.convertToType(data['personId'], 'Number');
-      if (data.hasOwnProperty('displayName'))
-        obj.displayName = ApiClient.convertToType(data['displayName'], 'String');
-      if (data.hasOwnProperty('email'))
-        obj.email = ApiClient.convertToType(data['email'], 'String');
-      if (data.hasOwnProperty('role'))
-        obj.role = Role.constructFromObject(data['role']);
+      if (data.hasOwnProperty("personId"))
+        obj.personId = ApiClient.convertToType(data["personId"], "Number");
+      if (data.hasOwnProperty("displayName"))
+        obj.displayName = ApiClient.convertToType(
+          data["displayName"],
+          "String",
+        );
+      if (data.hasOwnProperty("email"))
+        obj.email = ApiClient.convertToType(data["email"], "String");
+      if (data.hasOwnProperty("role"))
+        obj.role = Role.constructFromObject(data["role"]);
     }
     return obj;
   }
@@ -72,4 +74,3 @@ PersonAssociation.prototype.email = undefined;
  * @member {module:model/Role} role
  */
 PersonAssociation.prototype.role = undefined;
-

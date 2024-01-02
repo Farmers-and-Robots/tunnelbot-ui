@@ -13,8 +13,8 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from "../ApiClient";
-import {Device} from "./Device";
+import { ApiClient } from "../api/ApiClient";
+import { Device } from "./Device";
 
 /**
  * The devices model module.

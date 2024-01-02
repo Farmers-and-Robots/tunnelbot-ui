@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  *
  */
-import {ApiClient} from '../ApiClient';
+import { ApiClient } from "../api/ApiClient";
 
 /**
  * Enum class Role.
@@ -42,11 +42,11 @@ const Role = {
   /**
    * Returns a <code>Role</code> enum value from a JavaScript object name.
    * @param {Object} data The plain JavaScript object containing the name of the enum value.
-  * @return {module:model/Role} The enum <code>Role</code> value.
+   * @return {module:model/Role} The enum <code>Role</code> value.
    */
-  constructFromObject: function(object) {
+  constructFromObject: function (object) {
     return object;
-  }
+  },
 };
 
-export {Role};
+export { Role };
