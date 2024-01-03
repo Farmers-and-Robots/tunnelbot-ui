@@ -28,7 +28,7 @@ export default function SignIn() {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        navigate("/farm");
+        navigate("/farm/events");
         console.log(user);
       })
       .catch((error) => {
@@ -82,6 +82,7 @@ export default function SignIn() {
               id="password"
               autoComplete="current-password"
               onChange={(e) => setPassword(e.target.value)}
+              data-testid="password"
             />
             <TextField
               margin="normal"
@@ -102,6 +103,7 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
               color="secondary"
+              data-testid="signin"
             >
               Sign In
             </Button>

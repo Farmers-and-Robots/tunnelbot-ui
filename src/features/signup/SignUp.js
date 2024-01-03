@@ -30,7 +30,7 @@ export default function SignUp() {
         // Signed in
         const user = userCredential.user;
         console.log(user);
-        navigate("/login");
+        navigate("/signin");
         // ...
       })
       .catch((error) => {
@@ -108,6 +108,7 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  data-testid="password"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </Grid>
@@ -127,6 +128,7 @@ export default function SignUp() {
               sx={{ mt: 3, mb: 2 }}
               onClick={handleSubmit}
               color="secondary"
+              data-testid="signup"
             >
               Sign Up
             </Button>

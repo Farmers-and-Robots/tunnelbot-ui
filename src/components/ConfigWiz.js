@@ -40,6 +40,7 @@ function FabConfigWiz({ wizTitle, action }) {
         aria-label="add"
         sx={fabStyle}
         onClick={handleClickOpen}
+        data-testid="add"
       >
         <AddIcon />
       </Fab>
@@ -94,6 +95,7 @@ function FarmConfigWiz({ wizTitle, action }) {
         variant="contained"
         sx={FarmButtonStyle}
         onClick={handleClickOpen}
+        data-testid="addFarm"
       >
         {wizTitle}
       </Button>
@@ -113,7 +115,12 @@ function FarmConfigWiz({ wizTitle, action }) {
             >
               <CloseIcon />
             </IconButton>
-            <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
+            <Typography
+              sx={{ ml: 2, flex: 1 }}
+              variant="h6"
+              component="div"
+              data-testid="wizTitle"
+            >
               {wizTitle}
             </Typography>
           </Toolbar>
