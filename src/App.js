@@ -20,11 +20,12 @@ function App() {
       <div>
         <section>
           <Routes>
-            <Route path="/" element={<Farm />}></Route>
+            <Route index element={<Farm />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
             <Route path="/signin" element={<SignIn />}></Route>
             <Route path="/farm" element={<Farm />}>
-              <Route index="events" element={<Events />}></Route>
+              <Route index element={<Events />} />
+              <Route path="events" element={<Events />}></Route>
               <Route path="tunnels" element={<Tunnels />}></Route>
               <Route path="curtains" element={<Curtains />}></Route>
               <Route path="heating" element={<Heating />}></Route>

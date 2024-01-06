@@ -11,8 +11,8 @@ function fetchFarmData() {
       <Typography
         variant="h6"
         mt={4}
+        data-testid="nofarms"
         sx={{ textAlign: "center" }}
-        component="h1"
       >
         No farms found.
         <br />
