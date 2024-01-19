@@ -11,6 +11,7 @@ import {
   TunnelbotHeatingIcon,
   TunnelbotIrrigationIcon,
   TunnelbotProfileIcon,
+  TunnelbotTunnelIcon,
   TunnelbotWeatherIcon,
 } from "./TunnelbotIcons";
 
@@ -24,7 +25,7 @@ export const mainListItems = (
     </ListItemButton>
     <ListItemButton component={Link} to={"/farm/tunnels"}>
       <ListItemIcon>
-        <TunnelbotDevicesIcon />
+        <TunnelbotTunnelIcon />
       </ListItemIcon>
       <ListItemText primary="Tunnels" />
     </ListItemButton>

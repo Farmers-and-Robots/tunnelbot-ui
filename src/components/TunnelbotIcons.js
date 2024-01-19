@@ -3,15 +3,26 @@ import FaRLogo from "../assets/far-logo-2-color.png";
 import TunnelbotCameraSVG from "../assets/noun-camera-817253-2B1C1C.svg";
 import TunnelbotFarmSVG from "../assets/noun-farm-3686373-2B1C1C.svg";
 import TunnelbotHeatingSVG from "../assets/noun-heat-689784-2B1C1C.svg";
-import TunnelbotLightsSVG from "../assets/noun-light-bulb-1508212-2B1C1C.svg";
+import TunnelbotDeviceSVG from "../assets/noun-iot-3265861-2B1C1C.svg";
 import TunnelbotProfileSVG from "../assets/noun-profile-1385662-2B1C1C.svg";
+import TunnelbotTunnelSVG from "../assets/noun-tunnel-3557342-2B1C1C.svg";
 import TunnelbotIrrigationSVG from "../assets/noun-water-1201714-2B1C1C.svg";
 import TunnelbotWeatherSVG from "../assets/noun-weather-1518210-2B1C1C.svg";
 import TunnelbotCurtainSVG from "../assets/noun-wrapping-paper-28046-2B1C1C.svg";
 
 function TunnelbotFarmIcon() {
   return (
-    <img src={TunnelbotFarmSVG} style={{ height: 32, width: 32 }} alt="farm" />
+    <img src={TunnelbotFarmSVG} style={{ height: 34, width: 34 }} alt="farm" />
+  );
+}
+
+function TunnelbotTunnelIcon() {
+  return (
+    <img
+      src={TunnelbotTunnelSVG}
+      style={{ height: 30, width: 30 }}
+      alt="farm"
+    />
   );
 }
 
@@ -29,7 +40,7 @@ function TunnelbotWeatherIcon() {
   return (
     <img
       src={TunnelbotWeatherSVG}
-      style={{ height: 24, width: 24 }}
+      style={{ height: 22, width: 22 }}
       alt="weather"
     />
   );
@@ -68,7 +79,7 @@ function TunnelbotHeatingIcon() {
 function TunnelbotDevicesIcon() {
   return (
     <img
-      src={TunnelbotLightsSVG}
+      src={TunnelbotDeviceSVG}
       style={{ height: 24, width: 24 }}
       alt="lights"
     />
@@ -104,5 +115,6 @@ export {
   TunnelbotHeatingIcon,
   TunnelbotIrrigationIcon,
   TunnelbotProfileIcon,
+  TunnelbotTunnelIcon,
   FaRLogoPNG,
 };
